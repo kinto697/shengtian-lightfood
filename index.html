@@ -5,81 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>盛天轻食助手 · 新手减脂热量管家</title>
 <style>
-:root {
-  --bg:#f9f7f4; --card:#ffffff; --text:#3d3535; --muted:#8a7e78;
-  --accent:#7eb8a0; --accent2:#5a9e7c; --warm:#f0a868; --warm2:#e89340;
-  --danger:#e07060; --border:#e8e0d8; --radius:14px;
-  --shadow:0 2px 12px rgba(0,0,0,.05);
-}
+:root{--bg:#f9f7f4;--card:#fff;--text:#3d3535;--muted:#8a7e78;--accent:#7eb8a0;--accent2:#5a9e7c;--warm:#f0a868;--warm2:#e89340;--danger:#e07060;--border:#e8e0d8;--radius:14px;--shadow:0 2px 12px rgba(0,0,0,.05)}
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-  background:var(--bg); color:var(--text); line-height:1.7;
-  padding:16px; min-height:100vh;
-}
+body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding:16px;min-height:100vh}
 .container{max-width:760px;margin:0 auto}
-.header{
-  text-align:center; padding:28px 20px 20px; margin-bottom:16px;
-  background:linear-gradient(135deg,#e8f5ee,#f0f7f3);
-  border-radius:var(--radius); box-shadow:var(--shadow);
-}
+.header{text-align:center;padding:28px 20px 20px;margin-bottom:16px;background:linear-gradient(135deg,#e8f5ee,#f0f7f3);border-radius:var(--radius);box-shadow:var(--shadow)}
 .header h1{font-size:1.6em;color:#3d6b52;margin-bottom:4px}
 .header .sub{font-size:.9em;color:var(--muted)}
 .header .brand{font-size:.8em;color:#b8a89a;margin-top:4px}
-.card{
-  background:var(--card); border-radius:var(--radius);
-  padding:22px 24px; margin-bottom:14px;
-  box-shadow:var(--shadow); border:1px solid var(--border);
-}
+.card{background:var(--card);border-radius:var(--radius);padding:22px 24px;margin-bottom:14px;box-shadow:var(--shadow);border:1px solid var(--border)}
 .card h2{font-size:1.15em;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .card h3{font-size:1em;margin:10px 0 6px;color:#5a4640}
-
 .form-row{display:flex;gap:10px;flex-wrap:wrap;align-items:end;margin:10px 0}
 .form-group{display:flex;flex-direction:column;gap:4px}
 .form-group label{font-size:.85em;font-weight:600;color:#6b5e58}
-.form-group select,.form-group input{
-  padding:10px 14px;border:2px solid var(--border);border-radius:10px;
-  font-size:1em;font-family:inherit;background:#fdfcfb;
-  transition:border-color .2s;width:100%;
-}
+.form-group select,.form-group input{padding:10px 14px;border:2px solid var(--border);border-radius:10px;font-size:1em;font-family:inherit;background:#fdfcfb;transition:border-color .2s;width:100%}
 .form-group select:focus,.form-group input:focus{outline:none;border-color:var(--accent)}
-.btn{
-  padding:10px 22px;border:none;border-radius:10px;font-size:1em;
-  font-weight:600;font-family:inherit;cursor:pointer;transition:all .2s;
-}
+.btn{padding:10px 22px;border:none;border-radius:10px;font-size:1em;font-weight:600;font-family:inherit;cursor:pointer;transition:all .2s}
 .btn-primary{background:var(--accent);color:#fff}
 .btn-primary:hover{background:var(--accent2)}
-.btn-refresh{
-  background:none;border:1.5px solid var(--accent);color:var(--accent2);
-  padding:6px 14px;border-radius:20px;font-size:.82em;cursor:pointer;
-  transition:all .2s;white-space:nowrap;
-}
+.btn-refresh{background:none;border:1.5px solid var(--accent);color:var(--accent2);padding:6px 14px;border-radius:20px;font-size:.82em;cursor:pointer;transition:all .2s;white-space:nowrap}
 .btn-refresh:hover{background:var(--accent);color:#fff}
-.cat-select{
-  padding:5px 10px;border:1.5px solid var(--border);border-radius:20px;
-  font-size:.8em;font-family:inherit;background:#fdfcfb;cursor:pointer;
-  color:var(--text);white-space:nowrap;
-}
+.cat-select{padding:5px 10px;border:1.5px solid var(--border);border-radius:20px;font-size:.8em;font-family:inherit;background:#fdfcfb;cursor:pointer;color:var(--text);white-space:nowrap}
 .cat-select:focus{outline:none;border-color:var(--accent)}
-
 .calorie-bar{display:flex;gap:16px;flex-wrap:wrap;margin:12px 0}
-.calorie-card{
-  flex:1;min-width:110px;text-align:center;
-  padding:14px 10px;border-radius:12px;background:#f7faf8;
-  border:1px solid #d8e8dc;
-}
+.calorie-card{flex:1;min-width:110px;text-align:center;padding:14px 10px;border-radius:12px;background:#f7faf8;border:1px solid #d8e8dc}
 .calorie-card .num{font-size:1.5em;font-weight:700;color:var(--accent2)}
 .calorie-card .label{font-size:.76em;color:var(--muted);margin-top:2px}
-
 .meal-card{background:#fdfcfb;border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin:10px 0}
 .meal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px;flex-wrap:wrap}
-.meal-header .meal-title h2{margin:0 0 2px 0;font-size:1.1em}
+.meal-header .meal-title h2{margin:0 0 2px;font-size:1.1em}
 .meal-header .meal-meta{font-size:.78em;color:var(--muted);line-height:1.5}
 .meal-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;flex-shrink:0}
-.food-item{
-  display:flex;justify-content:space-between;align-items:flex-start;
-  gap:16px;padding:12px 0;border-bottom:1px dotted #f0e8e0;
-}
+.food-item{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:12px 0;border-bottom:1px dotted #f0e8e0}
 .food-item:last-child{border-bottom:none}
 .food-info{flex:1;min-width:0}
 .food-info .food-name{font-weight:600;font-size:.95em;line-height:1.4;margin-bottom:4px}
@@ -87,58 +45,36 @@ body{
 .food-info .food-source span{background:#fff3e8;padding:1px 6px;border-radius:4px;margin-right:4px;font-size:.8em}
 .food-info .food-time{font-size:.78em;color:#b8a89a}
 .food-info .food-macros{font-size:.76em;color:#b8a89a;margin-top:2px}
+.food-tip{font-size:.78em;color:var(--accent2);margin-top:4px;padding:4px 8px;background:#f0f8f4;border-radius:6px;line-height:1.4}
 .food-cal{font-weight:700;color:var(--warm2);white-space:nowrap;font-size:1em;text-align:right;padding-top:2px}
 .meal-total{text-align:right;font-size:.85em;color:var(--muted);margin-top:10px;padding-top:8px;border-top:1px solid #f0e8e8}
-
 .snack-row{display:flex;gap:12px;flex-wrap:wrap}
-.snack-item{
-  flex:1;min-width:140px;background:#fffaf5;
-  border:1px solid #f0e0d0;border-radius:10px;
-  padding:12px 14px;text-align:center;
-}
+.snack-item{flex:1;min-width:140px;background:#fffaf5;border:1px solid #f0e0d0;border-radius:10px;padding:12px 14px;text-align:center}
 .snack-item .snack-emoji{font-size:1.8em}
 .snack-item .snack-name{font-weight:600;font-size:.9em;margin:4px 0}
 .snack-item .snack-cal{font-size:.82em;color:var(--warm2)}
 .snack-item .snack-macros{font-size:.75em;color:var(--muted)}
-
+.snack-item .snack-tip{font-size:.73em;color:var(--accent2);margin-top:3px;line-height:1.3}
 .summary-table{width:100%;border-collapse:collapse;font-size:.88em;margin:10px 0}
 .summary-table th,.summary-table td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--border)}
 .summary-table th{background:#f8f5f1;font-weight:600}
 .tag-ok{color:var(--accent2);font-weight:600}
 .tag-warn{color:var(--warm2);font-weight:600}
 .tag-over{color:var(--danger);font-weight:600}
-
 .donut-wrap{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin:12px 0}
 .donut-chart{width:150px;height:150px;border-radius:50%;position:relative;flex-shrink:0}
-.donut-center{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:84px;height:84px;background:#fff;border-radius:50%;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-}
+.donut-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:84px;height:84px;background:#fff;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .donut-center .dnum{font-size:1.2em;font-weight:700;color:var(--text)}
 .donut-center .dlbl{font-size:.68em;color:var(--muted)}
 .donut-legend{flex:1;min-width:150px}
 .donut-legend .leg-item{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:.82em}
 .donut-legend .leg-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
-
 .footer{text-align:center;color:var(--muted);font-size:.8em;padding:20px;line-height:1.8}
-
-@media(max-width:500px){
-  .card{padding:14px 12px}
-  .form-row{flex-direction:column}
-  .calorie-bar{flex-direction:column}
-  .snack-row{flex-direction:column}
-  .meal-header{flex-direction:column}
-  .meal-actions{width:100%}
-  .donut-wrap{flex-direction:column;align-items:center}
-  .form-group{width:100%}
-  .form-group select,.form-group input{width:100%}
-}
+@media(max-width:500px){.card{padding:14px 12px}.form-row{flex-direction:column}.calorie-bar{flex-direction:column}.snack-row{flex-direction:column}.meal-header{flex-direction:column}.meal-actions{width:100%}.donut-wrap{flex-direction:column;align-items:center}.form-group{width:100%}.form-group select,.form-group input{width:100%}}
 </style>
 </head>
 <body>
 <div class="container">
-
 <div class="header">
   <div style="display:inline-block;background:var(--accent);color:#fff;padding:4px 14px;border-radius:20px;font-size:.8em;font-weight:700;margin-bottom:8px">💼 工作日版</div>
   <h1>🥗 盛天轻食助手</h1>
@@ -149,38 +85,20 @@ body{
 
 <div class="card" id="step1">
   <h2>👤 先告诉我你的基本信息</h2>
-  <p style="font-size:.85em;color:var(--muted);margin-bottom:10px">用来更准确地计算你的每日热量需求，输入身高体重会更精确哦~</p>
+  <p style="font-size:.85em;color:var(--muted);margin-bottom:10px">身高体重越准确，热量计算越精准，放心不会很严苛~</p>
   <div class="form-row">
-    <div class="form-group">
-      <label>性别</label>
-      <select id="gender"><option value="">请选择</option><option value="male">男生</option><option value="female">女生</option></select>
-    </div>
-    <div class="form-group">
-      <label>年龄</label>
-      <select id="age">
-        <option value="">请选择</option><option value="22">22-25岁</option><option value="27">26-30岁</option><option value="32">31-35岁</option><option value="37">36-40岁</option><option value="42">41-45岁</option><option value="47">46-50岁</option><option value="52">51-55岁</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>身高 (cm)</label>
-      <input type="number" id="height" placeholder="如 165" min="140" max="210" value="165">
-    </div>
-    <div class="form-group">
-      <label>体重 (kg)</label>
-      <input type="number" id="weight" placeholder="如 60" min="35" max="180" value="60">
-    </div>
+    <div class="form-group"><label>性别</label><select id="gender"><option value="">请选择</option><option value="male">男生</option><option value="female">女生</option></select></div>
+    <div class="form-group"><label>年龄</label><select id="age"><option value="">请选择</option><option value="22">22-25岁</option><option value="27">26-30岁</option><option value="32">31-35岁</option><option value="37">36-40岁</option><option value="42">41-45岁</option><option value="47">46-50岁</option><option value="52">51-55岁</option></select></div>
+    <div class="form-group"><label>身高 (cm)</label><input type="number" id="height" placeholder="如 165" min="140" max="210" value="165"></div>
+    <div class="form-group"><label>体重 (kg)</label><input type="number" id="weight" placeholder="如 60" min="35" max="180" value="60"></div>
     <button class="btn btn-primary" onclick="generatePlan()" style="align-self:end">开始规划 🚀</button>
   </div>
 </div>
 
 <div id="step2" style="display:none">
-
 <div class="card" id="calorieCard">
   <h2>🎯 你的推荐热量</h2>
-  <p style="font-size:.85em;color:var(--muted);margin-bottom:8px">
-    根据你的身高体重和年龄精准计算，减脂期建议每日摄入 <strong id="calRange"></strong> 大卡
-    <br>（比维持体重少约 350 大卡，温和不挨饿）
-  </p>
+  <p style="font-size:.85em;color:var(--muted);margin-bottom:8px">根据你的身高体重和年龄精准计算，减脂期建议每日摄入 <strong id="calRange"></strong> 大卡<br>（比维持体重少约 350 大卡，温和不挨饿）</p>
   <div class="calorie-bar">
     <div class="calorie-card"><div class="num" id="calTarget"></div><div class="label">建议摄入 / 天</div></div>
     <div class="calorie-card"><div class="num" id="calBreakfast"></div><div class="label">早餐 (~25%)</div></div>
@@ -191,7 +109,6 @@ body{
   <button class="btn btn-primary" onclick="randomizeAll()" style="margin-top:8px">🔄 全部刷新</button>
 </div>
 
-<!-- BREAKFAST -->
 <div class="card" id="breakfastCard">
   <div class="meal-header">
     <div class="meal-title"><h2>🌅 早餐</h2><div class="meal-meta">约 8:00-8:30 · 10点上班，通勤30-60分钟，起床后搞定</div></div>
@@ -203,7 +120,6 @@ body{
   <div id="breakfastItems"></div>
 </div>
 
-<!-- LUNCH -->
 <div class="card" id="lunchCard">
   <div class="meal-header">
     <div class="meal-title"><h2>☀️ 午餐</h2><div class="meal-meta">约 12:00-12:30 · 公司午休，下楼吃或外卖到工位</div></div>
@@ -215,18 +131,14 @@ body{
   <div id="lunchItems"></div>
 </div>
 
-<!-- SNACK -->
 <div class="card" id="snackCard">
   <div class="meal-header">
     <div class="meal-title"><h2>🍵 下午茶 & 水果</h2><div class="meal-meta">约 15:00-16:00 · 下午最饿的时候，拒绝奶茶诱惑！</div></div>
-    <div class="meal-actions">
-      <button class="btn-refresh" onclick="refreshMeal('snack')">🔄 换一套</button>
-    </div>
+    <div class="meal-actions"><button class="btn-refresh" onclick="refreshMeal('snack')">🔄 换一套</button></div>
   </div>
   <div class="snack-row" id="snackItems"></div>
 </div>
 
-<!-- DINNER -->
 <div class="card" id="dinnerCard">
   <div class="meal-header">
     <div class="meal-title"><h2>🌙 晚餐</h2><div class="meal-meta">约 19:30-20:00 · 7点下班+通勤到家，轻食为主</div></div>
@@ -242,146 +154,137 @@ body{
   <h2>📊 今日营养总结</h2>
   <div id="summaryContent"></div>
 </div>
-
-<div class="footer">
-  <p>🥗 盛天轻食助手 · 新手减脂友好 · 营养素为粗略估算仅供参考</p>
-  <p>如有特殊健康状况，请咨询专业营养师或医生</p>
-</div>
-
+<div class="footer"><p>🥗 盛天轻食助手 · 新手减脂友好 · 营养素为粗略估算仅供参考</p><p>如有特殊健康状况，请咨询专业营养师或医生</p></div>
 </div></div>
 
 <script>
-// ========== FOOD DATABASE (name, cal, category, protein_g, carbs_g, fat_g, source, time) ==========
-// category: "homemade" | "outside" | "convenience"
+// === FOOD DATABASE (expanded: 22-25 items per meal) ===
+// Fields: name, cal, cat, p(protein_g), c(carbs_g), f(fat_g), source, time, tip
 
-const breakfastPool = [
-  {name:"水煮蛋2个 + 全麦面包1片", cal:220, cat:"homemade", p:18, c:22, f:8, source:"自己做 · 煮蛋8分钟+烤面包2分钟", time:"10分钟"},
-  {name:"无糖豆浆1杯 + 菜包2个", cal:280, cat:"convenience", p:12, c:40, f:8, source:"便利店 · 全家/罗森/7-11 均有", time:"路上顺手买"},
-  {name:"燕麦牛奶粥 + 煮鸡蛋1个", cal:260, cat:"homemade", p:16, c:35, f:7, source:"自己做 · 燕麦片2分钟冲泡+蛋提前煮好", time:"5分钟"},
-  {name:"玉米1根 + 纯牛奶1盒 + 鸡蛋1个", cal:300, cat:"convenience", p:15, c:40, f:9, source:"便利店买玉米+牛奶+茶叶蛋", time:"路上顺手买"},
-  {name:"全麦三明治 + 美式咖啡(无糖)", cal:250, cat:"convenience", p:10, c:32, f:9, source:"全家/罗森/7-11 · 选全麦面包款", time:"路上顺手买"},
-  {name:"小米粥1碗 + 蒸饺4个(素馅)", cal:270, cat:"outside", p:10, c:45, f:6, source:"早餐店/粥铺 · 美团/饿了么早餐外卖", time:"外卖20分钟"},
-  {name:"紫薯1个 + 酸奶1杯 + 水煮蛋1个", cal:290, cat:"homemade", p:14, c:38, f:9, source:"紫薯提前蒸好 · 酸奶超市买", time:"10分钟(提前准备)"},
-  {name:"杂粮煎饼(少酱) + 无糖豆浆", cal:310, cat:"outside", p:12, c:48, f:8, source:"煎饼摊 · 跟老板说少放酱多加生菜", time:"路上顺手买"},
-  {name:"蒸南瓜200g + 鸡蛋白3个 + 黑咖啡", cal:240, cat:"homemade", p:22, c:28, f:3, source:"自己做 · 南瓜蒸10分钟+蛋提前煮好", time:"12分钟"},
-  {name:"荞麦面1碗(清汤) + 青菜 + 荷包蛋", cal:290, cat:"homemade", p:14, c:38, f:9, source:"自己做 · 面煮5分钟+蛋煎2分钟", time:"10分钟"},
-  {name:"隔夜燕麦杯(Overnight Oats)", cal:320, cat:"homemade", p:13, c:48, f:10, source:"前一晚做好放冰箱 · 早上直接吃", time:"前一晚5分钟"},
-  {name:"香蕉1根 + 蛋白粉1勺 + 脱脂牛奶", cal:280, cat:"homemade", p:28, c:32, f:3, source:"蛋白粉网购 · 牛奶便利店 · 摇一摇就走", time:"2分钟"},
+const breakfastPool=[
+  {name:"水煮蛋2个 + 全麦面包1片",cal:220,cat:"homemade",p:18,c:22,f:8,source:"自己做 · 煮蛋8分钟+烤面包2分钟",time:"10分钟",tip:"鸡蛋是全蛋白之王，早上吃两个精神一上午"},
+  {name:"无糖豆浆1杯 + 菜包2个",cal:280,cat:"convenience",p:12,c:40,f:8,source:"便利店 · 全家/罗森/7-11 均有",time:"路上顺手买",tip:"豆浆+包子是中式早餐经典搭配，选菜馅更轻盈"},
+  {name:"燕麦牛奶粥 + 煮鸡蛋1个",cal:260,cat:"homemade",p:16,c:35,f:7,source:"自己做 · 燕麦片2分钟冲泡+蛋提前煮好",time:"5分钟",tip:"燕麦富含β-葡聚糖，降胆固醇还能稳血糖"},
+  {name:"玉米1根 + 纯牛奶1盒 + 鸡蛋1个",cal:300,cat:"convenience",p:15,c:40,f:9,source:"便利店买玉米+牛奶+茶叶蛋",time:"路上顺手买",tip:"玉米是粗粮里的甜心，高纤维低GI不怕胖"},
+  {name:"全麦三明治 + 美式咖啡(无糖)",cal:250,cat:"convenience",p:10,c:32,f:9,source:"全家/罗森/7-11 · 选全麦面包款",time:"路上顺手买",tip:"黑咖啡几乎零卡，还能帮身体多消耗一点热量"},
+  {name:"小米粥1碗 + 蒸饺4个(素馅)",cal:270,cat:"outside",p:10,c:45,f:6,source:"早餐店/粥铺 · 美团/饿了么早餐外卖",time:"外卖20分钟",tip:"小米粥养胃温润，适合早上没胃口的时候"},
+  {name:"紫薯1个 + 酸奶1杯 + 水煮蛋1个",cal:290,cat:"homemade",p:14,c:38,f:9,source:"紫薯提前蒸好 · 酸奶超市买",time:"10分钟",tip:"紫薯花青素含量高，颜色越深抗氧化越强"},
+  {name:"杂粮煎饼(少酱) + 无糖豆浆",cal:310,cat:"outside",p:12,c:48,f:8,source:"煎饼摊 · 跟老板说少放酱多加生菜",time:"路上顺手买",tip:"杂粮煎饼比白面煎饼多了一倍的膳食纤维"},
+  {name:"蒸南瓜200g + 鸡蛋白3个 + 黑咖啡",cal:240,cat:"homemade",p:22,c:28,f:3,source:"自己做 · 南瓜蒸10分钟+蛋提前煮好",time:"12分钟",tip:"南瓜热量超低还能替代主食，减脂期好伙伴"},
+  {name:"荞麦面1碗(清汤) + 青菜 + 荷包蛋",cal:290,cat:"homemade",p:14,c:38,f:9,source:"自己做 · 面煮5分钟+蛋煎2分钟",time:"10分钟",tip:"荞麦面升糖指数比白面低，吃了不容易犯困"},
+  {name:"隔夜燕麦杯(Overnight Oats)",cal:320,cat:"homemade",p:13,c:48,f:10,source:"前一晚做好放冰箱早上直接吃",time:"前一晚5分钟",tip:"隔夜燕麦是懒人神器，前一晚做好早上拿了就走"},
+  {name:"香蕉1根 + 蛋白粉1勺 + 脱脂牛奶",cal:280,cat:"homemade",p:28,c:32,f:3,source:"蛋白粉网购 · 牛奶便利店",time:"2分钟",tip:"这个组合特别适合早上要赶时间的人，2分钟搞定"},
+  {name:"茶叶蛋2个 + 蒸红薯1个",cal:260,cat:"convenience",p:14,c:38,f:5,source:"便利店 · 全家茶叶蛋+蒸红薯套餐",time:"路上顺手买",tip:"红薯比白薯纤维更多，饱腹感强还不容易饿"},
+  {name:"豆腐脑(咸)1碗 + 烧饼半个",cal:280,cat:"outside",p:12,c:42,f:7,source:"早餐摊 · 豆腐脑少浇卤汁",time:"路上顺手买",tip:"豆腐脑是植物蛋白担当，咸口比甜口更友好"},
+  {name:"鸡蛋灌饼(少油少酱) + 豆浆",cal:320,cat:"outside",p:14,c:44,f:10,source:"煎饼摊 · 跟老板说少油少酱多加生菜",time:"路上顺手买",tip:"鸡蛋灌饼去掉油腻的酱料，其实是还不错的选择"},
+  {name:"全麦吐司2片 + 牛油果半个 + 水波蛋",cal:310,cat:"homemade",p:14,c:30,f:16,source:"自己做 · 吐司烤2分钟+蛋水波3分钟",time:"8分钟",tip:"牛油果的健康脂肪能让你整个上午都不觉得饿"},
+  {name:"蒸饺6个(虾仁馅) + 无糖酸奶",cal:290,cat:"convenience",p:16,c:36,f:9,source:"便利店 · 冷冻柜蒸饺+酸奶",time:"微波炉2分钟",tip:"虾仁馅饺子比猪肉馅少了近一半的脂肪"},
+  {name:"肉松饭团1个 + 纯牛奶 + 小番茄5颗",cal:310,cat:"convenience",p:12,c:42,f:10,source:"便利店 · 饭团+牛奶+水果区",time:"路上顺手买",tip:"饭团选肉松比选炸鸡排少了一半热量"},
+  {name:"南瓜小米粥 + 煮鹌鹑蛋6个",cal:260,cat:"homemade",p:14,c:38,f:6,source:"电饭煲预约 · 早起直接盛一碗",time:"前一晚5分钟",tip:"电饭煲预约功能是打工人神器，醒来就有热粥"},
+  {name:"黑芝麻糊(无糖)1碗 + 苏打饼干3片",cal:280,cat:"homemade",p:8,c:42,f:9,source:"黑芝麻粉冲热水+饼干便利店买",time:"3分钟",tip:"黑芝麻含钙量是牛奶的8倍，补钙好选择"},
+  {name:"蔬菜鸡蛋饼 + 柠檬水",cal:270,cat:"homemade",p:16,c:28,f:11,source:"蛋+面粉+蔬菜碎煎3分钟",time:"8分钟",tip:"蔬菜切碎混进蛋饼里，不知不觉多吃了一份菜"},
+  {name:"红糖馒头1个 + 水煮蛋 + 黑豆浆",cal:290,cat:"outside",p:14,c:42,f:7,source:"包子铺+豆浆店 · 美团早餐可配送",time:"路上顺手买",tip:"黑豆蛋白质含量比黄豆还高，营养密度大"},
 ];
 
-const lunchPool = [
-  {name:"鸡胸肉沙拉 + 杂粮饭小碗", cal:380, cat:"outside", p:35, c:38, f:10, source:"轻食外卖 · 美团/饿了么搜「轻食沙拉」", time:"外卖30分钟"},
-  {name:"清蒸鱼套餐(鲈鱼/鳕鱼) + 西兰花", cal:350, cat:"outside", p:32, c:28, f:12, source:"中式快餐 · 老乡鸡/大米先生/真功夫等", time:"楼下/外卖20分钟"},
-  {name:"番茄牛肉糙米饭(少油版)", cal:420, cat:"outside", p:28, c:48, f:14, source:"健康餐外卖 · 美团搜「健身餐」「减脂餐」", time:"外卖30分钟"},
-  {name:"鸡腿饭(去皮) + 青菜 + 米饭半碗", cal:400, cat:"outside", p:30, c:42, f:14, source:"中式快餐 · 沙县小吃等 · 选鸡腿去皮", time:"楼下/外卖15分钟"},
-  {name:"菌菇豆腐汤 + 杂粮馒头1个 + 凉拌黄瓜", cal:340, cat:"homemade", p:18, c:42, f:12, source:"自己做可带饭 · 豆腐+菌菇煮10分钟", time:"20分钟(可前一晚准备)"},
-  {name:"牛肉面(少面多菜) + 卤蛋", cal:430, cat:"outside", p:25, c:50, f:15, source:"兰州拉面/面馆 · 跟老板说少面多青菜", time:"楼下/外卖15分钟"},
-  {name:"三文鱼波奇饭(Poke Bowl)", cal:410, cat:"outside", p:28, c:42, f:16, source:"轻食店 · 美团/饿了么搜「波奇饭」", time:"外卖35分钟"},
-  {name:"麻辣烫(清汤底+多蔬菜+少丸子)", cal:370, cat:"outside", p:22, c:36, f:16, source:"杨国福/张亮麻辣烫 · 清汤汤底多拿蔬菜豆腐", time:"楼下/外卖20分钟"},
-  {name:"照烧鸡腿 + 烤蔬菜(南瓜/芦笋/彩椒)", cal:390, cat:"homemade", p:32, c:35, f:16, source:"鸡腿腌10分钟+空气炸锅15分钟", time:"30分钟"},
-  {name:"虾仁滑蛋 + 杂粮饭 + 白灼生菜", cal:360, cat:"homemade", p:30, c:38, f:10, source:"虾仁+蛋5分钟 · 生菜焯水1分钟", time:"15分钟"},
-  {name:"酸菜鱼(小份) + 米饭半碗", cal:400, cat:"outside", p:30, c:40, f:16, source:"太二酸菜鱼/鱼你在一起等 · 选小份", time:"外卖25分钟"},
-  {name:"日式荞麦冷面 + 蔬菜天妇罗(少量)", cal:350, cat:"outside", p:15, c:48, f:12, source:"日料外卖 · 美团搜「荞麦面」", time:"外卖30分钟"},
-  {name:"鸡胸肉卷饼 + 蔬菜沙拉", cal:370, cat:"outside", p:32, c:36, f:13, source:"轻食店 · 赛百味/连锁轻食品牌", time:"外卖/楼下20分钟"},
-  {name:"豆腐煲(海鲜/鸡肉) + 米饭小半碗", cal:380, cat:"outside", p:22, c:42, f:15, source:"茶餐厅/煲仔饭店 · 选豆腐为主", time:"外卖25分钟"},
-  {name:"自制便当:鸡胸+西兰花+玉米+杂粮饭", cal:400, cat:"homemade", p:36, c:40, f:12, source:"前一晚做好 · 公司微波炉加热", time:"前一晚20分钟"},
+const lunchPool=[
+  {name:"鸡胸肉沙拉 + 杂粮饭小碗",cal:380,cat:"outside",p:35,c:38,f:10,source:"轻食外卖 · 美团/饿了么搜「轻食沙拉」",time:"外卖30分钟",tip:"鸡胸肉是减脂界的顶流，高蛋白低脂肪性价比之王"},
+  {name:"清蒸鱼套餐(鲈鱼/鳕鱼) + 西兰花",cal:350,cat:"outside",p:32,c:28,f:12,source:"中式快餐 · 老乡鸡/大米先生/真功夫等",time:"楼下/外卖20分钟",tip:"蒸鱼保留了最多营养，鱼肉蛋白吸收率高达98%"},
+  {name:"番茄牛肉糙米饭(少油版)",cal:420,cat:"outside",p:28,c:48,f:14,source:"健康餐外卖 · 美团搜「健身餐」「减脂餐」",time:"外卖30分钟",tip:"牛肉的肌酸能帮肌肉恢复，配上番茄的番茄红素绝了"},
+  {name:"鸡腿饭(去皮) + 青菜 + 米饭半碗",cal:400,cat:"outside",p:30,c:42,f:14,source:"中式快餐 · 沙县小吃等 选鸡腿去皮",time:"楼下/外卖15分钟",tip:"鸡皮去掉能减少近40%的热量，这个动作很值"},
+  {name:"菌菇豆腐汤 + 杂粮馒头1个 + 凉拌黄瓜",cal:340,cat:"homemade",p:18,c:42,f:12,source:"自己做可带饭 · 豆腐+菌菇煮10分钟",time:"20分钟",tip:"菌菇类热量极低但鲜味十足，是天然的味精替代"},
+  {name:"牛肉面(少面多菜) + 卤蛋",cal:430,cat:"outside",p:25,c:50,f:15,source:"兰州拉面/面馆 · 跟老板说少面多青菜",time:"楼下/外卖15分钟",tip:"少面多菜这个操作能让一碗面少摄入100多大卡"},
+  {name:"三文鱼波奇饭(Poke Bowl)",cal:410,cat:"outside",p:28,c:42,f:16,source:"轻食店 · 美团/饿了么搜「波奇饭」",time:"外卖35分钟",tip:"三文鱼的Omega-3能抗炎，办公久坐族很需要"},
+  {name:"麻辣烫(清汤+多蔬菜+少丸子)",cal:370,cat:"outside",p:22,c:36,f:16,source:"杨国福/张亮 · 清汤汤底多拿蔬菜豆腐",time:"楼下/外卖20分钟",tip:"麻辣烫选对了也能减脂！秘诀就是清汤+蔬菜+豆腐"},
+  {name:"照烧鸡腿 + 烤蔬菜(南瓜/芦笋/彩椒)",cal:390,cat:"homemade",p:32,c:35,f:16,source:"鸡腿腌10分钟+空气炸锅15分钟",time:"30分钟",tip:"空气炸锅不用额外加油，鸡皮自带油脂就够香了"},
+  {name:"虾仁滑蛋 + 杂粮饭 + 白灼生菜",cal:360,cat:"homemade",p:30,c:38,f:10,source:"虾仁+蛋5分钟 · 生菜焯水1分钟",time:"15分钟",tip:"虾仁蛋白质含量比鸡胸肉还高，脂肪几乎为零"},
+  {name:"酸菜鱼(小份) + 米饭半碗",cal:400,cat:"outside",p:30,c:40,f:16,source:"太二酸菜鱼/鱼你在一起 · 选小份",time:"外卖25分钟",tip:"鱼肉蛋白+酸菜的乳酸菌，既解馋又不会太罪恶"},
+  {name:"日式荞麦冷面 + 蔬菜天妇罗(少量)",cal:350,cat:"outside",p:15,c:48,f:12,source:"日料外卖 · 美团搜「荞麦面」",time:"外卖30分钟",tip:"荞麦面的芦丁成分对血管友好，夏天吃冷面正合适"},
+  {name:"鸡胸肉卷饼 + 蔬菜沙拉",cal:370,cat:"outside",p:32,c:36,f:13,source:"轻食店 · 赛百味/连锁轻食品牌",time:"外卖/楼下20分钟",tip:"赛百味的面包可以选全麦，酱料选少酱或蜂蜜芥末"},
+  {name:"豆腐海鲜煲 + 米饭小半碗",cal:380,cat:"outside",p:22,c:42,f:15,source:"茶餐厅/煲仔饭店 · 选豆腐为主",time:"外卖25分钟",tip:"豆腐+海鲜的组合，蛋白互补营养更全面"},
+  {name:"自制便当:鸡胸+西兰花+玉米+杂粮饭",cal:400,cat:"homemade",p:36,c:40,f:12,source:"前一晚做好 · 公司微波炉加热",time:"前一晚20分钟",tip:"自己带饭最大的好处是控油控盐，减脂效果翻倍"},
+  {name:"黄焖鸡(小份少油) + 米饭半碗 + 青菜",cal:410,cat:"outside",p:28,c:44,f:16,source:"黄焖鸡米饭连锁店 · 跟老板说少油",time:"楼下/外卖15分钟",tip:"黄焖鸡选少油版，去掉鸡皮，就是一顿不错的减脂餐"},
+  {name:"番茄意面(鸡肉版) + 蔬菜沙拉",cal:390,cat:"outside",p:22,c:48,f:13,source:"意面外卖/萨莉亚 · 选番茄酱底非奶油",time:"外卖25分钟",tip:"意面的GI值比白米饭低，番茄酱底比奶油底少一半热量"},
+  {name:"水煮肉片(少油版) + 杂粮饭",cal:420,cat:"outside",p:32,c:40,f:18,source:"川菜馆 · 跟老板说少油少辣",time:"外卖25分钟",tip:"水煮≠水煮，外面的水煮通常油很多，记得备注少油"},
+  {name:"韩式拌饭(少酱) + 泡菜",cal:400,cat:"outside",p:18,c:52,f:14,source:"韩料外卖 · 拌饭酱要少放",time:"外卖30分钟",tip:"韩式拌饭蔬菜种类多，就是酱料热量高，少放酱很关键"},
+  {name:"金枪鱼三明治 + 蔬菜杯",cal:370,cat:"outside",p:26,c:36,f:14,source:"赛百味/轻食店 · 选全麦面包+少酱",time:"外卖15分钟",tip:"金枪鱼选水浸不要油浸，热量能差一倍"},
+  {name:"鸡丝凉面(少酱) + 卤豆腐干",cal:380,cat:"outside",p:24,c:44,f:14,source:"面馆/凉皮店 · 酱料减半",time:"楼下/外卖15分钟",tip:"凉面的麻酱是热量炸弹，少放一半酱能省100多大卡"},
+  {name:"蛋白粉奶昔 + 全麦面包 + 即食鸡胸",cal:390,cat:"homemade",p:42,c:36,f:8,source:"蛋白粉冲泡+面包便利店+鸡胸网购",time:"5分钟",tip:"超高蛋白组合，适合力量训练日后的补充"},
 ];
 
-const dinnerPool = [
-  {name:"番茄蛋汤 + 蒸紫薯1个 + 凉拌菠菜", cal:280, cat:"homemade", p:14, c:35, f:10, source:"蛋汤5分钟+紫薯提前蒸好", time:"15分钟"},
-  {name:"白灼虾200g + 杂粮粥1碗 + 青菜", cal:310, cat:"homemade", p:32, c:30, f:6, source:"虾白灼3分钟 · 粥用高压锅预约", time:"15分钟"},
-  {name:"鸡胸肉沙拉 + 南瓜汤", cal:290, cat:"homemade", p:35, c:25, f:8, source:"鸡胸肉煎8分钟+南瓜煮熟打泥", time:"20分钟"},
-  {name:"蒸鱼(小黄鱼/鲈鱼) + 水煮西兰花", cal:270, cat:"homemade", p:30, c:18, f:9, source:"鱼蒸8-10分钟+西兰花焯水", time:"15分钟"},
-  {name:"关东煮(蔬菜+豆腐+魔芋丝+鸡蛋)", cal:300, cat:"convenience", p:18, c:35, f:10, source:"便利店 · 全家/罗森/7-11 关东煮选清汤", time:"路上顺手买"},
-  {name:"虾仁蔬菜粥 + 拌豆腐", cal:320, cat:"outside", p:22, c:40, f:8, source:"粥店外卖 · 美团搜「海鲜粥」「蔬菜粥」", time:"外卖25分钟"},
-  {name:"酸辣魔芋面(低卡版) + 鸡胸肉丝", cal:240, cat:"homemade", p:28, c:20, f:5, source:"魔芋面开水烫1分钟+调料拌匀", time:"8分钟"},
-  {name:"蔬菜蛋花汤 + 全麦馒头半个 + 凉拌木耳", cal:260, cat:"homemade", p:12, c:36, f:8, source:"蛋花汤5分钟+木耳提前泡好", time:"15分钟"},
-  {name:"烤三文鱼 + 芦笋 + 小土豆2个", cal:350, cat:"homemade", p:30, c:30, f:14, source:"烤箱/空气炸锅180度15分钟", time:"20分钟"},
-  {name:"豆腐蔬菜锅(豆乳锅底)", cal:280, cat:"homemade", p:20, c:28, f:12, source:"豆腐+各种蔬菜一锅煮", time:"15分钟"},
-  {name:"鸡茸玉米羹 + 蒸饺3个(素)", cal:300, cat:"homemade", p:22, c:36, f:9, source:"鸡胸肉剁茸+玉米煮8分钟", time:"20分钟"},
-  {name:"金枪鱼沙拉配全麦饼干", cal:260, cat:"homemade", p:25, c:22, f:9, source:"金枪鱼罐头(水浸)+生菜+饼干", time:"5分钟"},
-  {name:"清炒时蔬 + 蒸蛋羹 + 杂粮饭小半碗", cal:310, cat:"homemade", p:18, c:38, f:10, source:"蛋羹蒸8分钟+菜炒3分钟", time:"15分钟"},
-  {name:"牛油果鸡胸肉全麦三明治", cal:340, cat:"outside", p:28, c:35, f:14, source:"轻食外卖 · 赛百味/连锁轻食品牌", time:"外卖20分钟"},
-  {name:"冬瓜排骨汤(少排骨) + 凉拌海带丝", cal:290, cat:"homemade", p:16, c:28, f:14, source:"汤用高压锅30分钟(可前一晚做)", time:"35分钟(含等待)"},
+const dinnerPool=[
+  {name:"番茄蛋汤 + 蒸紫薯1个 + 凉拌菠菜",cal:280,cat:"homemade",p:14,c:35,f:10,source:"蛋汤5分钟+紫薯提前蒸好",time:"15分钟",tip:"晚上吃紫薯代替米饭，同样的饱腹感少了近一半碳水"},
+  {name:"白灼虾200g + 杂粮粥1碗 + 青菜",cal:310,cat:"homemade",p:32,c:30,f:6,source:"虾白灼3分钟 · 粥用电饭煲预约",time:"15分钟",tip:"白灼是最健康的烹饪方式，虾本身鲜甜不需要额外调味"},
+  {name:"鸡胸肉沙拉 + 南瓜汤",cal:290,cat:"homemade",p:35,c:25,f:8,source:"鸡胸肉煎8分钟+南瓜煮熟打泥",time:"20分钟",tip:"南瓜汤不加奶油也很浓郁，秘诀是多煮一会儿"},
+  {name:"蒸鱼(小黄鱼/鲈鱼) + 水煮西兰花",cal:270,cat:"homemade",p:30,c:18,f:9,source:"鱼蒸8-10分钟+西兰花焯水",time:"15分钟",tip:"蒸鱼是晚餐的理想形态——高蛋白低负担好消化"},
+  {name:"关东煮(蔬菜+豆腐+魔芋丝+鸡蛋)",cal:300,cat:"convenience",p:18,c:35,f:10,source:"便利店 · 全家/罗森/7-11 清汤款",time:"路上顺手买",tip:"关东煮选对食材就是完美的减脂轻晚餐"},
+  {name:"虾仁蔬菜粥 + 拌豆腐",cal:320,cat:"outside",p:22,c:40,f:8,source:"粥店外卖 · 美团搜「海鲜粥」「蔬菜粥」",time:"外卖25分钟",tip:"晚上喝粥好消化，但别选皮蛋瘦肉粥那种高脂款"},
+  {name:"酸辣魔芋面(低卡版) + 鸡胸肉丝",cal:240,cat:"homemade",p:28,c:20,f:5,source:"魔芋面开水烫1分钟+调料拌匀",time:"8分钟",tip:"魔芋几乎零卡，是减脂期想嗦面的最佳替身"},
+  {name:"蔬菜蛋花汤 + 全麦馒头半个 + 凉拌木耳",cal:260,cat:"homemade",p:12,c:36,f:8,source:"蛋花汤5分钟+木耳提前泡好",time:"15分钟",tip:"木耳清肠刮油，配上蛋花汤暖胃又不会太重"},
+  {name:"烤三文鱼 + 芦笋 + 小土豆2个",cal:350,cat:"homemade",p:30,c:30,f:14,source:"烤箱/空气炸锅180度15分钟",time:"20分钟",tip:"三文鱼的健康脂肪有助睡眠，晚上吃反而有好处"},
+  {name:"豆腐蔬菜锅(豆乳锅底)",cal:280,cat:"homemade",p:20,c:28,f:12,source:"豆腐+各种蔬菜一锅煮",time:"15分钟",tip:"一锅炖的蔬菜锅是最省事的晚餐，营养全在汤里"},
+  {name:"鸡茸玉米羹 + 蒸饺3个(素)",cal:300,cat:"homemade",p:22,c:36,f:9,source:"鸡胸肉剁茸+玉米煮8分钟",time:"20分钟",tip:"鸡茸比整块鸡肉好消化，晚上吃肠胃没负担"},
+  {name:"金枪鱼沙拉配全麦饼干",cal:260,cat:"homemade",p:25,c:22,f:9,source:"金枪鱼罐头(水浸)+生菜+饼干",time:"5分钟",tip:"水浸金枪鱼罐头是懒人蛋白来源，开罐即食"},
+  {name:"清炒时蔬 + 蒸蛋羹 + 杂粮饭小半碗",cal:310,cat:"homemade",p:18,c:38,f:10,source:"蛋羹蒸8分钟+菜炒3分钟",time:"15分钟",tip:"蒸蛋羹比煎蛋少了一半以上的油，嫩滑还低卡"},
+  {name:"牛油果鸡胸肉全麦三明治",cal:340,cat:"outside",p:28,c:35,f:14,source:"轻食外卖 · 赛百味/连锁轻食品牌",time:"外卖20分钟",tip:"晚餐吃三明治要选全麦面包，酱料减半"},
+  {name:"冬瓜排骨汤(少排骨多冬瓜) + 凉拌海带丝",cal:290,cat:"homemade",p:16,c:28,f:14,source:"高压锅30分钟(可前一晚做)",time:"35分钟",tip:"冬瓜利水消肿，晚上吃第二天脸不容易浮肿"},
+  {name:"日式味噌汤 + 糙米饭团1个 + 枝豆",cal:310,cat:"outside",p:14,c:42,f:10,source:"日料店/便利店 · 味噌汤+糙米饭团",time:"外卖20分钟",tip:"味噌是发酵食品，对肠道菌群友好"},
+  {name:"越南春卷(虾仁鲜蔬)4个 + 鱼露蘸水",cal:280,cat:"outside",p:18,c:34,f:8,source:"越南料理外卖 · 美团搜「越南春卷」",time:"外卖25分钟",tip:"越南春卷是米纸包的，不油炸，热量比中式春卷低"},
+  {name:"蒸蛋 + 香菇炒青江菜 + 紫米饭半碗",cal:300,cat:"homemade",p:16,c:38,f:10,source:"蛋羹蒸8分钟+香菇青菜炒3分钟",time:"15分钟",tip:"深绿色蔬菜钙含量高，每餐都应该来一份"},
+  {name:"低脂希腊酸奶 + 格兰诺拉麦片 + 蓝莓",cal:320,cat:"homemade",p:18,c:42,f:10,source:"酸奶超市买 · 麦片+蓝莓即食",time:"2分钟",tip:"晚上不想开火时这个组合最快，营养也够"},
+  {name:"泰式青木瓜沙拉 + 烤鸡串2支",cal:340,cat:"outside",p:24,c:32,f:14,source:"泰料外卖 · 美团搜「青木瓜沙拉」",time:"外卖25分钟",tip:"青木瓜酵素有助消化，酸辣口味开胃不油腻"},
+  {name:"花蛤豆腐汤 + 杂粮小馒头1个",cal:290,cat:"homemade",p:22,c:30,f:10,source:"花蛤吐沙后煮5分钟+豆腐同煮",time:"15分钟",tip:"花蛤是海鲜里热量最低的一档，鲜美还不长肉"},
+  {name:"煎豆腐(少油) + 炒豆芽 + 藜麦饭半碗",cal:320,cat:"homemade",p:20,c:36,f:12,source:"豆腐煎至金黄+豆芽翻炒2分钟+藜麦煮熟",time:"20分钟",tip:"藜麦是全蛋白谷物，素食者的蛋白质救星"},
 ];
 
-const afternoonSnacks = [
-  {name:"无糖酸奶1杯", emoji:"🥛", cal:90, cat:"convenience", p:8, c:10, f:2, source:"便利店/超市 · 选无糖/低脂款"},
-  {name:"每日坚果1小包(25g)", emoji:"🥜", cal:130, cat:"convenience", p:4, c:5, f:11, source:"超市/网购 · 选无盐版本"},
-  {name:"黑巧克力2小块(>70%)", emoji:"🍫", cal:80, cat:"convenience", p:1, c:6, f:6, source:"便利店/超市 · 可可含量>70%"},
-  {name:"即食鸡胸肉1小包", emoji:"🍗", cal:110, cat:"convenience", p:22, c:2, f:2, source:"便利店/网购 · 优形/肌肉小王子"},
-  {name:"海苔1小包", emoji:"🌿", cal:35, cat:"convenience", p:2, c:2, f:1, source:"便利店/超市 · 选原味非油炸"},
-  {name:"魔芋爽1小包", emoji:"🍜", cal:40, cat:"convenience", p:1, c:8, f:0, source:"便利店 · 低卡解馋小零食"},
-  {name:"蛋白棒1根", emoji:"💪", cal:140, cat:"convenience", p:15, c:15, f:5, source:"便利店/网购 · 选低糖版本"},
-  {name:"全麦饼干3片", emoji:"🍪", cal:100, cat:"convenience", p:2, c:16, f:3, source:"超市 · 选全麦/低糖款"},
-  {name:"盐水毛豆1小碗", emoji:"🫘", cal:80, cat:"homemade", p:6, c:5, f:3, source:"便利店/自己做 · 毛豆煮熟即可"},
-  {name:"零卡果冻1个", emoji:"🍮", cal:10, cat:"convenience", p:0, c:2, f:0, source:"便利店/超市 · 蒟蒻代糖版"},
+const afternoonSnacks=[
+  {name:"无糖酸奶1杯",emoji:"🥛",cal:90,cat:"convenience",p:8,c:10,f:2,source:"便利店/超市 · 选无糖/低脂款",tip:"酸奶的益生菌对肠道好，下午喝还能防便秘"},
+  {name:"每日坚果1小包(25g)",emoji:"🥜",cal:130,cat:"convenience",p:4,c:5,f:11,source:"超市/网购 · 选无盐版本",tip:"一小把坚果的量刚好，多了就成热量炸弹了"},
+  {name:"黑巧克力2小块(>70%)",emoji:"🍫",cal:80,cat:"convenience",p:1,c:6,f:6,source:"便利店/超市 · 可可含量>70%",tip:"黑巧的硬脂酸不会被身体完全吸收，实际热量更低"},
+  {name:"即食鸡胸肉1小包",emoji:"🍗",cal:110,cat:"convenience",p:22,c:2,f:2,source:"便利店/网购 · 优形/肌肉小王子",tip:"即食鸡胸开袋就能吃，下午饿了的蛋白急救包"},
+  {name:"海苔1小包",emoji:"🌿",cal:35,cat:"convenience",p:2,c:2,f:1,source:"便利店/超市 · 选原味非油炸",tip:"海苔热量极低咀嚼感强，是嘴馋时的完美替代"},
+  {name:"魔芋爽1小包",emoji:"🍜",cal:40,cat:"convenience",p:1,c:8,f:0,source:"便利店 · 低卡解馋小零食",tip:"魔芋爽的口感像辣条但热量只有十分之一"},
+  {name:"蛋白棒1根",emoji:"💪",cal:140,cat:"convenience",p:15,c:15,f:5,source:"便利店/网购 · 选低糖版本",tip:"蛋白棒饱腹感强，一根能顶到下班"},
+  {name:"全麦饼干3片",emoji:"🍪",cal:100,cat:"convenience",p:2,c:16,f:3,source:"超市 · 选全麦/低糖款",tip:"饼干选全麦的比普通的多了一倍纤维"},
+  {name:"盐水毛豆1小碗",emoji:"🫘",cal:80,cat:"homemade",p:6,c:5,f:3,source:"便利店/自己做 · 毛豆煮熟加盐",tip:"毛豆就是年轻的大豆，蛋白质+纤维双高"},
+  {name:"零卡果冻1个",emoji:"🍮",cal:10,cat:"convenience",p:0,c:2,f:0,source:"便利店/超市 · 蒟蒻代糖版",tip:"嘴馋想吃甜的又怕热量？零卡果冻救你"},
+  {name:"希腊酸奶1小杯 + 蜂蜜少许",emoji:"🍯",cal:120,cat:"convenience",p:12,c:12,f:5,source:"便利店 · 希腊酸奶比普通酸奶蛋白高一倍",tip:"希腊酸奶的蛋白质是普通酸奶的2倍，饱腹感更强"},
+  {name:"小黄瓜1根 + 鹰嘴豆泥2勺",emoji:"🥒",cal:90,cat:"homemade",p:4,c:10,f:4,source:"黄瓜便利店 · 鹰嘴豆泥自备或网购",tip:"黄瓜蘸鹰嘴豆泥是中东人最爱的健康零食"},
 ];
 
-const fruitPool = [
-  {name:"苹果1个(中等)", emoji:"🍎", cal:95, p:0, c:22, f:0, note:"高纤维 · 饱腹感强"},
-  {name:"香蕉1根(中等)", emoji:"🍌", cal:105, p:1, c:25, f:0, note:"补钾 · 运动后适合"},
-  {name:"蓝莓1小盒(125g)", emoji:"🫐", cal:70, p:1, c:16, f:0, note:"抗氧化 · 低糖水果之王"},
-  {name:"圣女果15颗", emoji:"🍅", cal:50, p:2, c:8, f:0, note:"超低卡 · 维C丰富"},
-  {name:"猕猴桃1个", emoji:"🥝", cal:55, p:1, c:12, f:0, note:"维C爆表 · 帮助消化"},
-  {name:"橙子1个", emoji:"🍊", cal:65, p:1, c:14, f:0, note:"补充维C · 增强免疫力"},
-  {name:"草莓10颗(约150g)", emoji:"🍓", cal:50, p:1, c:10, f:0, note:"低糖高颜值 · 幸福感拉满"},
-  {name:"柚子3瓣", emoji:"🍈", cal:60, p:1, c:13, f:0, note:"低GI · 帮助燃脂"},
-  {name:"梨1个", emoji:"🍐", cal:85, p:0, c:20, f:0, note:"润肺 · 秋天首选"},
-  {name:"火龙果半个(白心)", emoji:"🐉", cal:55, p:1, c:11, f:0, note:"通便神器 · 高纤维"},
+const fruitPool=[
+  {name:"苹果1个(中等)",emoji:"🍎",cal:95,p:0,c:22,f:0,note:"高纤维 · 饱腹感强",tip:"苹果皮富含果胶，洗干净连皮吃营养翻倍"},
+  {name:"香蕉1根(中等)",emoji:"🍌",cal:105,p:1,c:25,f:0,note:"补钾 · 运动后适合",tip:"香蕉是天然的能量棒，运动后吃一根恢复快"},
+  {name:"蓝莓1小盒(125g)",emoji:"🫐",cal:70,p:1,c:16,f:0,note:"抗氧化 · 低糖水果之王",tip:"蓝莓花青素含量水果第一，对眼睛好"},
+  {name:"圣女果15颗",emoji:"🍅",cal:50,p:2,c:8,f:0,note:"超低卡 · 维C丰富",tip:"圣女果比大番茄更甜但热量依然极低"},
+  {name:"猕猴桃1个",emoji:"🥝",cal:55,p:1,c:12,f:0,note:"维C爆表 · 帮助消化",tip:"一个猕猴桃的维C顶一天需求量，免疫力加成"},
+  {name:"橙子1个",emoji:"🍊",cal:65,p:1,c:14,f:0,note:"补充维C · 增强免疫力",tip:"橙子白色的橘络别撕掉，那里面全是纤维"},
+  {name:"草莓10颗(约150g)",emoji:"🍓",cal:50,p:1,c:10,f:0,note:"低糖高颜值 · 幸福感拉满",tip:"草莓热量比苹果还低，吃起来甜但糖分不多"},
+  {name:"柚子3瓣",emoji:"🍈",cal:60,p:1,c:13,f:0,note:"低GI · 帮助燃脂",tip:"柚子含柚皮苷，研究显示对脂肪代谢有轻微帮助"},
+  {name:"梨1个",emoji:"🍐",cal:85,p:0,c:20,f:0,note:"润肺 · 秋天首选",tip:"梨的水分含量超85%，干燥季节补水神器"},
+  {name:"火龙果半个(白心)",emoji:"🐉",cal:55,p:1,c:11,f:0,note:"通便神器 · 高纤维",tip:"火龙果的小黑籽是不溶性纤维，通便效果一流"},
+  {name:"樱桃15颗",emoji:"🍒",cal:75,p:1,c:18,f:0,note:"花青素丰富 · 助眠",tip:"樱桃含天然褪黑素，下午吃有助晚上睡眠质量"},
+  {name:"木瓜半个",emoji:"🟠",cal:70,p:1,c:16,f:0,note:"木瓜酵素助消化",tip:"木瓜酵素帮助分解蛋白质，饭后吃刚刚好"},
 ];
 
-// ========== HELPERS ==========
-function pickRandom(arr, n){
-  const s=[...arr].sort(()=>Math.random()-0.5);
-  return s.slice(0,Math.min(n,s.length));
-}
-function filterByCat(pool, cat){
-  if(cat==='all') return pool;
-  return pool.filter(f=>f.cat===cat);
-}
-
-// ========== STATE ==========
+// === HELPERS ===
+function pickRandom(arr,n){const s=[...arr].sort(()=>Math.random()-0.5);return s.slice(0,Math.min(n,s.length))}
+function filterByCat(pool,cat){if(cat==='all')return pool;return pool.filter(f=>f.cat===cat)}
 let currentPlan=null;
 
 function generatePlan(){
-  const gender=document.getElementById('gender').value;
-  const age=parseInt(document.getElementById('age').value);
-  const h=parseFloat(document.getElementById('height').value);
-  const w=parseFloat(document.getElementById('weight').value);
-  if(!gender||!age){alert('请选择性别和年龄~');return;}
-  if(!h||!w||h<100||w<20){alert('请输入合理的身高体重哦~（身高100-210cm，体重20-180kg）');return;}
-
-  const cal=calcCalories(gender,age,h,w);
-  const bCat=document.getElementById('breakfastCat').value;
-  const lCat=document.getElementById('lunchCat').value;
-  const dCat=document.getElementById('dinnerCat').value;
-
-  currentPlan={
-    gender,age,h,w,cal,
-    breakfastItems:pickRandom(filterByCat(breakfastPool,bCat),1),
-    lunchItems:pickRandom(filterByCat(lunchPool,lCat),1),
-    dinnerItems:pickRandom(filterByCat(dinnerPool,dCat),1),
-    snackPick:pickRandom(afternoonSnacks,1)[0],
-    fruitPick:pickRandom(fruitPool,1)[0]
-  };
-  saveToStorage(gender,age,h,w);
-  render(currentPlan);
+  const g=document.getElementById('gender').value,a=parseInt(document.getElementById('age').value),h=parseFloat(document.getElementById('height').value),w=parseFloat(document.getElementById('weight').value);
+  if(!g||!a){alert('请选择性别和年龄~');return}
+  if(!h||!w||h<100||w<20){alert('请输入合理的身高体重~');return}
+  const cal=calcCalories(g,a,h,w);
+  const bCat=document.getElementById('breakfastCat').value,lCat=document.getElementById('lunchCat').value,dCat=document.getElementById('dinnerCat').value;
+  currentPlan={g,a,h,w,cal,breakfastItems:pickRandom(filterByCat(breakfastPool,bCat),1),lunchItems:pickRandom(filterByCat(lunchPool,lCat),1),dinnerItems:pickRandom(filterByCat(dinnerPool,dCat),1),snackPick:pickRandom(afternoonSnacks,1)[0],fruitPick:pickRandom(fruitPool,1)[0]};
+  saveToStorage(g,a,h,w);render(currentPlan);
 }
 
-function calcCalories(gender,age,h,w){
-  let bmr;
-  if(gender==='male'){bmr=10*w+6.25*h-5*age+5}
-  else{bmr=10*w+6.25*h-5*age-161}
-  const tdee=Math.round(bmr*1.2);
-  const deficit=350;
-  const target=tdee-deficit;
-  return{
-    bmr:Math.round(bmr),tdee,
-    target,targetLow:target-100,targetHigh:target+100,
-    breakfast:Math.round(target*0.25),lunch:Math.round(target*0.35),
-    dinner:Math.round(target*0.30),snackBudget:Math.round(target*0.10)
-  };
+function calcCalories(g,age,h,w){
+  let bmr=g==='male'?10*w+6.25*h-5*age+5:10*w+6.25*h-5*age-161;
+  const tdee=Math.round(bmr*1.2),deficit=350,target=tdee-deficit;
+  return{bmr:Math.round(bmr),tdee,target,targetLow:target-100,targetHigh:target+100,breakfast:Math.round(target*.25),lunch:Math.round(target*.35),dinner:Math.round(target*.30),snackBudget:Math.round(target*.10)};
 }
 
 function render(plan){
@@ -401,19 +304,19 @@ function render(plan){
   document.getElementById('calorieCard').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
-function renderMeal(mealType,items){
-  const c=document.getElementById(mealType+'Items');
-  let t=items.reduce((s,i)=>s+i.cal,0), h='';
+function renderMeal(mt,items){
+  const c=document.getElementById(mt+'Items');
+  let t=items.reduce((s,i)=>s+i.cal,0),h='';
   items.forEach(i=>{
-    const mp=i.p?` · 蛋白质${i.p}g`:'', mc=i.c?` 碳水${i.c}g`:'', mf=i.f?` 脂肪${i.f}g`:'';
+    const mp=i.p?`· 蛋白质${i.p}g`:'',mc=i.c?` 碳水${i.c}g`:'',mf=i.f?` 脂肪${i.f}g`:'';
     h+=`<div class="food-item"><div class="food-info">
       <div class="food-name">${i.name}</div>
       <div class="food-source"><span>📍 来源</span> ${i.source}</div>
       <div class="food-time">⏱ ${i.time||'10分钟'}</div>
-      <div class="food-macros">🧬${mp}${mc}${mf}</div>
+      <div class="food-macros">🧬 ${mp} ${mc} ${mf}</div>
+      <div class="food-tip">💬 ${i.tip||''}</div>
     </div>
-    <div class="food-cal">${i.cal}<br><span style="font-size:.7em;font-weight:400;color:var(--muted)">kcal</span></div>
-    </div>`;
+    <div class="food-cal">${i.cal}<br><span style="font-size:.7em;font-weight:400;color:var(--muted)">kcal</span></div></div>`;
   });
   h+=`<div class="meal-total">本餐合计 <strong style="color:var(--accent2);font-size:1.1em">${t} kcal</strong></div>`;
   c.innerHTML=h;
@@ -421,14 +324,14 @@ function renderMeal(mealType,items){
 
 function renderSnack(s,f){
   document.getElementById('snackItems').innerHTML=`
-    <div class="snack-item"><div class="snack-emoji">${s.emoji}</div><div class="snack-name">${s.name}</div><div class="snack-cal">${s.cal} kcal</div><div class="snack-macros">🧬 蛋白${s.p||0}g · 碳水${s.c||0}g · 脂肪${s.f||0}g</div><div style="font-size:.72em;color:var(--muted)">${s.source}</div></div>
-    <div class="snack-item"><div class="snack-emoji">${f.emoji}</div><div class="snack-name">${f.name}</div><div class="snack-cal">${f.cal} kcal</div><div class="snack-macros">🍎 ${f.note||''}</div></div>`;
+    <div class="snack-item"><div class="snack-emoji">${s.emoji}</div><div class="snack-name">${s.name}</div><div class="snack-cal">${s.cal} kcal</div><div class="snack-macros">🧬 蛋白${s.p||0}g · 碳水${s.c||0}g · 脂肪${s.f||0}g</div><div class="snack-tip">💬 ${s.tip||''}</div></div>
+    <div class="snack-item"><div class="snack-emoji">${f.emoji}</div><div class="snack-name">${f.name}</div><div class="snack-cal">${f.cal} kcal</div><div class="snack-macros">🍎 ${f.note||''}</div><div class="snack-tip">💬 ${f.tip||''}</div></div>`;
 }
 
-function refreshMeal(mealType){
+function refreshMeal(mt){
   if(!currentPlan)return;
   let pool,cat;
-  switch(mealType){
+  switch(mt){
     case'breakfast':cat=document.getElementById('breakfastCat').value;pool=filterByCat(breakfastPool,cat);currentPlan.breakfastItems=pickRandom(pool,1);renderMeal('breakfast',currentPlan.breakfastItems);break;
     case'lunch':cat=document.getElementById('lunchCat').value;pool=filterByCat(lunchPool,cat);currentPlan.lunchItems=pickRandom(pool,1);renderMeal('lunch',currentPlan.lunchItems);break;
     case'dinner':cat=document.getElementById('dinnerCat').value;pool=filterByCat(dinnerPool,cat);currentPlan.dinnerItems=pickRandom(pool,1);renderMeal('dinner',currentPlan.dinnerItems);break;
@@ -449,79 +352,58 @@ function randomizeAll(){
 
 function renderSummary(plan){
   const cal=plan.cal;
-  const bC=plan.breakfastItems.reduce((s,i)=>s+i.cal,0);
-  const lC=plan.lunchItems.reduce((s,i)=>s+i.cal,0);
-  const dC=plan.dinnerItems.reduce((s,i)=>s+i.cal,0);
-  const sC=plan.snackPick.cal+plan.fruitPick.cal;
+  const bC=plan.breakfastItems.reduce((s,i)=>s+i.cal,0),lC=plan.lunchItems.reduce((s,i)=>s+i.cal,0),dC=plan.dinnerItems.reduce((s,i)=>s+i.cal,0),sC=plan.snackPick.cal+plan.fruitPick.cal;
   const totalCal=bC+lC+dC+sC;
-
-  // Sum real macros from all food items
   const allFoods=[...plan.breakfastItems,...plan.lunchItems,...plan.dinnerItems,plan.snackPick,plan.fruitPick];
-  const totalP=allFoods.reduce((s,i)=>s+(i.p||0),0);
-  const totalC=allFoods.reduce((s,i)=>s+(i.c||0),0);
-  const totalF=allFoods.reduce((s,i)=>s+(i.f||0),0);
-  const pKcal=totalP*4, cKcal=totalC*4, fKcal=totalF*9;
-  const macroTotal=pKcal+cKcal+fKcal||1;
-  const protPct=Math.round(pKcal/macroTotal*100);
-  const carbPct=Math.round(cKcal/macroTotal*100);
-  const fatPct=Math.round(fKcal/macroTotal*100);
+  const totalP=allFoods.reduce((s,i)=>s+(i.p||0),0),totalC=allFoods.reduce((s,i)=>s+(i.c||0),0),totalF=allFoods.reduce((s,i)=>s+(i.f||0),0);
+  const pKcal=totalP*4,cKcal=totalC*4,fKcal=totalF*9,macroTotal=pKcal+cKcal+fKcal||1;
+  const protPct=Math.round(pKcal/macroTotal*100),carbPct=Math.round(cKcal/macroTotal*100),fatPct=Math.round(fKcal/macroTotal*100);
+  const diff=totalCal-cal.target,diffPercent=Math.round((totalCal/cal.target-1)*100);
 
-  const diff=totalCal-cal.target;
-  const diffPercent=Math.round((totalCal/cal.target-1)*100);
+  let as='',tc='';
+  if(Math.abs(diff)<=100){as='非常棒！今天的热量搭配很合理，继续保持~ 🎉';tc='tag-ok'}
+  else if(diff<-100){as=`比目标少了 ${Math.abs(diff)} kcal，偏少。觉得饿可以加一小份蛋白质~ 💪`;tc='tag-warn'}
+  else if(diff<=200){as=`比目标多了 ${diff} kcal，在可接受范围内。明天稍微注意一下~ 😊`;tc='tag-warn'}
+  else{as=`比目标多了 ${diff} kcal，稍微超了。下午茶减半试试？不用自责~ 🌸`;tc='tag-over'}
 
-  let assessment='',tagClass='';
-  if(Math.abs(diff)<=100){assessment='非常棒！今天的热量搭配很合理，继续保持~ 🎉';tagClass='tag-ok'}
-  else if(diff<-100){assessment=`比目标少了 ${Math.abs(diff)} kcal，偏少。觉得饿可以加一小份蛋白质~ 💪`;tagClass='tag-warn'}
-  else if(diff<=200){assessment=`比目标多了 ${diff} kcal，在可接受范围内。明天稍微注意一下~ 😊`;tagClass='tag-warn'}
-  else{assessment=`比目标多了 ${diff} kcal，稍微超了。下午茶减半试试？不用自责~ 🌸`;tagClass='tag-over'}
+  let mn='';
+  if(protPct>=18&&protPct<=28&&fatPct>=20&&fatPct<=35)mn='✅ 三大营养素比例在推荐范围内，很棒！';
+  else if(protPct<18)mn='⚠️ 蛋白质占比偏低，建议增加鸡胸肉、鱼虾、蛋奶类';
+  else if(fatPct>35)mn='⚠️ 脂肪占比偏高，注意减少油炸和高油烹饪';
+  else mn='⚡ 营养素比例基本合理，可以微调一下~';
 
-  // Macro assessment
-  let macroNote='';
-  if(protPct>=18&&protPct<=28&&fatPct>=20&&fatPct<=35) macroNote='✅ 三大营养素比例在推荐范围内，很棒！';
-  else if(protPct<18) macroNote='⚠️ 蛋白质占比偏低，建议增加鸡胸肉、鱼虾、蛋奶类';
-  else if(fatPct>35) macroNote='⚠️ 脂肪占比偏高，注意减少油炸和高油烹饪';
-  else macroNote='⚡ 营养素比例基本合理，可以微调一下~';
-
-  // Food quality checks
   const allNames=allFoods.map(i=>i.name).join('');
-  const hasVeg=/菜|蔬|西兰|芦笋|番茄|黄瓜|木耳|海带|生菜|菠菜|菌菇|南瓜|冬瓜|豆芽|青椒|彩椒|沙拉/.test(allNames);
-  const hasProtein=/鸡|鱼|虾|蛋|牛|猪|豆|豆腐|奶|三文|金枪/.test(allNames);
-  const hasGrain=/杂粮|全麦|糙米|燕麦|荞麦|玉米|紫薯|南瓜|小米|魔芋|红薯/.test(allNames);
-
+  const hasVeg=/菜|蔬|西兰|芦笋|番茄|黄瓜|木耳|海带|生菜|菠菜|菌菇|南瓜|冬瓜|豆芽|青椒|彩椒|沙拉|泡菜|海苔/.test(allNames);
+  const hasProtein=/鸡|鱼|虾|蛋|牛|猪|豆|豆腐|奶|三文|金枪|肉|贝|蛤/.test(allNames);
+  const hasGrain=/杂粮|全麦|糙米|燕麦|荞麦|玉米|紫薯|南瓜|小米|魔芋|红薯|藜/.test(allNames);
   let notes=[];
-  if(hasVeg&&hasProtein&&hasGrain) notes.push('🌈 今天的搭配挺全面！蔬菜、蛋白质、粗粮都有，给自己点个赞~');
-  if(!hasVeg) notes.push('🥬 <strong>蔬菜可能偏少</strong>——热量极低但营养丰富，每餐最好都有蔬菜');
-  if(!hasGrain) notes.push('🌾 <strong>粗粮可以再多点</strong>——把白米饭换成杂粮饭或紫薯更扛饿');
+  if(hasVeg&&hasProtein&&hasGrain)notes.push('🌈 今天的搭配挺全面！蔬菜、蛋白质、粗粮都有，给自己点个赞~');
+  if(!hasVeg)notes.push('🥬 <strong>蔬菜可能偏少</strong>——热量极低但营养丰富，每餐最好都有蔬菜');
+  if(!hasGrain)notes.push('🌾 <strong>粗粮可以再多点</strong>——把白米饭换成杂粮饭或紫薯更扛饿');
 
-  // Build charts
-  const chartData=[{label:'早餐',cal:bC,color:'#f0a868'},{label:'午餐',cal:lC,color:'#e07060'},{label:'晚餐',cal:dC,color:'#7eb8a0'},{label:'加餐',cal:sC,color:'#6b8db5'}];
-  let cparts=[],cum=0;
-  chartData.forEach(d=>{const p=d.cal/totalCal*100;cparts.push(`${d.color} ${cum}% ${cum+p}%`);cum+=p;});
+  const cd=[{label:'早餐',cal:bC,color:'#f0a868'},{label:'午餐',cal:lC,color:'#e07060'},{label:'晚餐',cal:dC,color:'#7eb8a0'},{label:'加餐',cal:sC,color:'#6b8db5'}];
+  let cp=[],cu=0;cd.forEach(d=>{const p=d.cal/totalCal*100;cp.push(`${d.color} ${cu}% ${cu+p}%`);cu+=p;});
 
-  const macroData=[{label:'蛋白质',pct:protPct,color:'#e07060'},{label:'碳水',pct:carbPct,color:'#f0a868'},{label:'脂肪',pct:fatPct,color:'#7eb8a0'}];
-  let mparts=[],mcum=0;
-  macroData.forEach(d=>{mparts.push(`${d.color} ${mcum}% ${mcum+d.pct}%`);mcum+=d.pct;});
+  const md=[{label:'蛋白质',pct:protPct,color:'#e07060'},{label:'碳水',pct:carbPct,color:'#f0a868'},{label:'脂肪',pct:fatPct,color:'#7eb8a0'}];
+  let mp=[],mu=0;md.forEach(d=>{mp.push(`${d.color} ${mu}% ${mu+d.pct}%`);mu+=d.pct;});
 
   document.getElementById('summaryContent').innerHTML=`
     <h3 style="margin:0 0 12px">🍽️ 热量分配</h3>
     <div class="donut-wrap">
-      <div class="donut-chart" style="background:conic-gradient(${cparts.join(',')})"><div class="donut-center"><div class="dnum">${totalCal}</div><div class="dlbl">kcal/天</div></div></div>
-      <div class="donut-legend">${chartData.map(d=>`<div class="leg-item"><div class="leg-dot" style="background:${d.color}"></div><span>${d.label}</span><strong style="margin-left:auto">${d.cal} kcal</strong><span style="color:var(--muted);font-size:.8em">(${Math.round(d.cal/totalCal*100)}%)</span></div>`).join('')}</div>
+      <div class="donut-chart" style="background:conic-gradient(${cp.join(',')})"><div class="donut-center"><div class="dnum">${totalCal}</div><div class="dlbl">kcal/天</div></div></div>
+      <div class="donut-legend">${cd.map(d=>`<div class="leg-item"><div class="leg-dot" style="background:${d.color}"></div><span>${d.label}</span><strong style="margin-left:auto">${d.cal} kcal</strong><span style="color:var(--muted);font-size:.8em">(${Math.round(d.cal/totalCal*100)}%)</span></div>`).join('')}</div>
     </div>
     <h3 style="margin:16px 0 12px">🧬 能量来源构成 <span style="font-size:.7em;font-weight:400;color:var(--muted)">(基于食物实际估算)</span></h3>
     <div class="donut-wrap">
-      <div class="donut-chart" style="background:conic-gradient(${mparts.join(',')})"><div class="donut-center"><div class="dnum" style="font-size:1em">${protPct}:${carbPct}:${fatPct}</div><div class="dlbl">蛋:碳:脂</div></div></div>
-      <div class="donut-legend">
-        ${macroData.map(d=>`<div class="leg-item"><div class="leg-dot" style="background:${d.color}"></div><span>${d.label}</span><strong style="margin-left:auto">${d.pct}%</strong></div>`).join('')}
-        <div style="margin-top:8px;font-size:.82em;color:${macroNote.startsWith('✅')?'var(--accent2)':'var(--warm2)'}">${macroNote}</div>
-      </div>
+      <div class="donut-chart" style="background:conic-gradient(${mp.join(',')})"><div class="donut-center"><div class="dnum" style="font-size:1em">${protPct}:${carbPct}:${fatPct}</div><div class="dlbl">蛋:碳:脂</div></div></div>
+      <div class="donut-legend">${md.map(d=>`<div class="leg-item"><div class="leg-dot" style="background:${d.color}"></div><span>${d.label}</span><strong style="margin-left:auto">${d.pct}%</strong></div>`).join('')}<div style="margin-top:8px;font-size:.82em;color:${mn.startsWith('✅')?'var(--accent2)':'var(--warm2)'}">${mn}</div></div>
     </div>
     <table class="summary-table">
       <tr><th>项目</th><th>数值</th><th>说明</th></tr>
       <tr><td>今日总摄入</td><td><strong>${totalCal} kcal</strong></td><td>目标 ${cal.targetLow}-${cal.targetHigh} kcal</td></tr>
-      <tr><td>偏差</td><td><span class="${tagClass}">${diff>0?'+':''}${diff} kcal (${diffPercent>0?'+':''}${diffPercent}%)</span></td><td>${assessment}</td></tr>
+      <tr><td>偏差</td><td><span class="${tc}">${diff>0?'+':''}${diff} kcal (${diffPercent>0?'+':''}${diffPercent}%)</span></td><td>${as}</td></tr>
       <tr><td>蛋白质</td><td>~${totalP}g (${protPct}%)</td><td>${totalP>=50?'✅ 充足':totalP>=35?'⚠️ 可再多一点':'🔴 偏少'}</td></tr>
-      <tr><td>碳水</td><td>~${totalC}g (${carbPct}%)</td><td>${carbPct>=40&&carbPct<=55?'✅ 合理':carbPct>55?'⚠️ 偏高，减精制碳水':'⚠️ 偏低'}</td></tr>
+      <tr><td>碳水</td><td>~${totalC}g (${carbPct}%)</td><td>${carbPct>=40&&carbPct<=55?'✅ 合理':carbPct>55?'⚠️ 偏高':'⚠️ 偏低'}</td></tr>
       <tr><td>脂肪</td><td>~${totalF}g (${fatPct}%)</td><td>${fatPct<=30?'✅ 健康':fatPct<=35?'⚠️ 稍高':'🔴 偏高'}</td></tr>
     </table>
     <div style="margin-top:12px">${notes.map(n=>`<p style="margin:6px 0;font-size:.9em">${n}</p>`).join('')}</div>
@@ -529,19 +411,13 @@ function renderSummary(plan){
 }
 
 function getDailyTip(){
-  const t=["饭前喝一杯水(约300ml)，能有效减少正餐摄入量，亲测有效~","细嚼慢咽！大脑需要约20分钟才能收到「饱了」的信号。","下午觉得饿的时候先喝杯水，有时身体把「渴」误判为「饿」。","久坐之后站起来走5分钟，帮身体更好地利用血糖。","晚餐尽量在睡前3小时吃完，给消化系统休息时间。","把零食放在看不见的地方！人更容易吃掉眼前的食物。","用薄荷茶/柠檬水代替含糖饮料，零热量照样好喝。","给每餐拍张照——看到自己吃得很健康是正向激励！","周末可适当放宽——减脂是马拉松不是冲刺。","睡眠不足会让人更容易饿，今晚早点睡吧~"];
+  const t=["饭前喝一杯水(约300ml)，能有效减少正餐摄入量，亲测有效~","细嚼慢咽！大脑需要约20分钟才能收到「饱了」的信号。","下午觉得饿的时候先喝杯水，有时身体把「渴」误判为「饿」。","久坐之后站起来走5分钟，帮身体更好地利用血糖。","晚餐尽量在睡前3小时吃完，给消化系统休息时间。","把零食放在看不见的地方！人更容易吃掉眼前的食物。","用薄荷茶/柠檬水代替含糖饮料，零热量照样好喝。","给每餐拍张照——看到自己吃得很健康是正向激励！","周末可适当放宽——减脂是马拉松不是冲刺。","睡眠不足会让人更容易饿，今晚早点睡吧~","用筷子代替勺子吃饭能让你吃得更慢，细嚼慢咽。","饭前先喝汤苗条又健康，这句老话其实有科学依据。"];
   return t[Math.floor(Math.random()*t.length)];
 }
 
-// ========== STORAGE ==========
-function saveToStorage(g,a,h,w){try{localStorage.setItem('st_lf2',JSON.stringify({gender:g,age:a,height:h,weight:w}));}catch(e){}}
+function saveToStorage(g,a,h,w){try{localStorage.setItem('st_lf3',JSON.stringify({gender:g,age:a,height:h,weight:w}));}catch(e){}}
 (function init(){
-  try{
-    const d=JSON.parse(localStorage.getItem('st_lf2'));
-    if(d){document.getElementById('gender').value=d.gender;document.getElementById('age').value=d.age;document.getElementById('height').value=d.height||165;document.getElementById('weight').value=d.weight||60;}
-  }catch(e){}
-  const s=JSON.parse(localStorage.getItem('st_lf2')||'{}');
-  if(s.gender&&s.age){document.getElementById('gender').value=s.gender;document.getElementById('age').value=s.age;generatePlan();}
+  try{const d=JSON.parse(localStorage.getItem('st_lf3'));if(d){document.getElementById('gender').value=d.gender;document.getElementById('age').value=d.age;document.getElementById('height').value=d.height||165;document.getElementById('weight').value=d.weight||60;if(d.gender&&d.age)generatePlan();}}catch(e){}
 })();
 </script>
 </body>
