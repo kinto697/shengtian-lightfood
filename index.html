@@ -123,6 +123,23 @@ body{
 .bar-fill.warn{background:var(--warm)}
 .bar-fill.over{background:var(--danger)}
 
+/* Donut chart */
+.donut-wrap{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin:12px 0}
+.donut-chart{
+  width:160px;height:160px;border-radius:50%;position:relative;
+  flex-shrink:0;
+}
+.donut-center{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:90px;height:90px;background:#fff;border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.donut-center .dnum{font-size:1.3em;font-weight:700;color:var(--text)}
+.donut-center .dlbl{font-size:.7em;color:var(--muted)}
+.donut-legend{flex:1;min-width:160px}
+.donut-legend .leg-item{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:.85em}
+.donut-legend .leg-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+
 /* Footer */
 .footer{text-align:center;color:var(--muted);font-size:.8em;padding:20px;line-height:1.8}
 
@@ -404,9 +421,9 @@ function generatePlan(){
   const cal = calcCalories(gender, age);
 
   // Pick meals
-  const breakfastItems = pickRandom(breakfastPool, 2);
-  const lunchItems = pickRandom(lunchPool, 2);
-  const dinnerItems = pickRandom(dinnerPool, 2);
+  const breakfastItems = pickRandom(breakfastPool, 1);
+  const lunchItems = pickRandom(lunchPool, 1);
+  const dinnerItems = pickRandom(dinnerPool, 1);
   const snackPick = pickRandom(afternoonSnacks, 1)[0];
   const fruitPick = pickRandom(fruitPool, 1)[0];
 
@@ -478,17 +495,17 @@ function refreshMeal(mealType){
 
   switch(mealType){
     case 'breakfast':
-      newItems = pickRandom(breakfastPool, 2);
+      newItems = pickRandom(breakfastPool, 1);
       plan.breakfastItems = newItems;
       renderMeal('breakfast', newItems, plan);
       break;
     case 'lunch':
-      newItems = pickRandom(lunchPool, 2);
+      newItems = pickRandom(lunchPool, 1);
       plan.lunchItems = newItems;
       renderMeal('lunch', newItems, plan);
       break;
     case 'dinner':
-      newItems = pickRandom(dinnerPool, 2);
+      newItems = pickRandom(dinnerPool, 1);
       plan.dinnerItems = newItems;
       renderMeal('dinner', newItems, plan);
       break;
@@ -503,9 +520,9 @@ function refreshMeal(mealType){
 
 function randomizeAll(){
   if(!currentPlan) return;
-  currentPlan.breakfastItems = pickRandom(breakfastPool, 2);
-  currentPlan.lunchItems = pickRandom(lunchPool, 2);
-  currentPlan.dinnerItems = pickRandom(dinnerPool, 2);
+  currentPlan.breakfastItems = pickRandom(breakfastPool, 1);
+  currentPlan.lunchItems = pickRandom(lunchPool, 1);
+  currentPlan.dinnerItems = pickRandom(dinnerPool, 1);
   currentPlan.snackPick = pickRandom(afternoonSnacks, 1)[0];
   currentPlan.fruitPick = pickRandom(fruitPool, 1)[0];
   render(currentPlan);
@@ -567,7 +584,43 @@ function renderSummary(plan){
   }
 
   const container = document.getElementById('summaryContent');
+
+  // Build donut chart data
+  const chartData = [
+    {label:'早餐', cal:breakfastCal, color:'#f0a868'},
+    {label:'午餐', cal:lunchCal, color:'#e07060'},
+    {label:'晚餐', cal:dinnerCal, color:'#7eb8a0'},
+    {label:'加餐', cal:snackCal, color:'#6b8db5'},
+  ];
+  const totalForChart = chartData.reduce((s,d)=>s+d.cal,0);
+  let conicParts = [];
+  let cum = 0;
+  chartData.forEach(d=>{
+    const pct = (d.cal/totalForChart*100);
+    conicParts.push(`${d.color} ${cum}% ${cum+pct}%`);
+    cum += pct;
+  });
+  const conicGradient = conicParts.join(', ');
+
   container.innerHTML = `
+    <div class="donut-wrap">
+      <div class="donut-chart" style="background:conic-gradient(${conicGradient})">
+        <div class="donut-center">
+          <div class="dnum">${totalCal}</div>
+          <div class="dlbl">kcal / 天</div>
+        </div>
+      </div>
+      <div class="donut-legend">
+        ${chartData.map(d=>`
+          <div class="leg-item">
+            <div class="leg-dot" style="background:${d.color}"></div>
+            <span>${d.label}</span>
+            <strong style="margin-left:auto">${d.cal} kcal</strong>
+            <span style="color:var(--muted);font-size:.8em">(${Math.round(d.cal/totalForChart*100)}%)</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
     <table class="summary-table">
       <tr><th>项目</th><th>数值</th><th>说明</th></tr>
       <tr><td>今日总摄入</td><td><strong>${totalCal} kcal</strong></td><td>目标 ${cal.targetLow}-${cal.targetHigh} kcal</td></tr>
