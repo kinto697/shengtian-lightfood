@@ -78,24 +78,26 @@ body{
 /* Meal card */
 .meal-card{
   background:#fdfcfb;border:1px solid var(--border);border-radius:12px;
-  padding:16px 18px;margin:10px 0;position:relative;
+  padding:18px 20px;margin:10px 0;
 }
-.meal-card .meal-header{
-  display:flex;justify-content:space-between;align-items:center;
-  margin-bottom:8px;
-}
-.meal-card .meal-name{font-weight:700;font-size:1.05em}
-.meal-card .meal-time{font-size:.8em;color:var(--muted)}
-.meal-card .food-item{
+.meal-header{
   display:flex;justify-content:space-between;align-items:flex-start;
-  padding:8px 0;border-bottom:1px dotted #f0e8e0;
+  margin-bottom:12px;gap:12px;
 }
-.meal-card .food-item:last-child{border-bottom:none}
-.food-info{flex:1}
-.food-info .food-name{font-weight:600;font-size:.95em}
-.food-info .food-source{font-size:.8em;color:var(--muted);margin-top:2px}
-.food-info .food-source span{background:#fff3e8;padding:1px 6px;border-radius:4px;margin-right:4px;font-size:.78em}
-.food-cal{font-weight:700;color:var(--warm2);white-space:nowrap;font-size:.95em;min-width:60px;text-align:right}
+.meal-header .meal-title h2{margin:0 0 2px 0;font-size:1.1em}
+.meal-header .meal-meta{font-size:.78em;color:var(--muted);line-height:1.5}
+.food-item{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:16px;padding:12px 0;border-bottom:1px dotted #f0e8e0;
+}
+.food-item:last-child{border-bottom:none}
+.food-info{flex:1;min-width:0}
+.food-info .food-name{font-weight:600;font-size:.95em;line-height:1.4;margin-bottom:4px}
+.food-info .food-source{font-size:.82em;color:var(--muted);line-height:1.5;margin-bottom:2px}
+.food-info .food-source span{background:#fff3e8;padding:1px 6px;border-radius:4px;margin-right:4px;font-size:.8em}
+.food-info .food-time{font-size:.78em;color:#b8a89a}
+.food-cal{font-weight:700;color:var(--warm2);white-space:nowrap;font-size:1em;text-align:right;padding-top:2px}
+.meal-total{text-align:right;font-size:.85em;color:var(--muted);margin-top:10px;padding-top:8px;border-top:1px solid #f0e8e0}
 
 /* Snack section */
 .snack-row{display:flex;gap:12px;flex-wrap:wrap}
@@ -157,9 +159,11 @@ body{
 
 <!-- HEADER -->
 <div class="header">
+  <div style="display:inline-block;background:var(--accent);color:#fff;padding:4px 14px;border-radius:20px;font-size:.8em;font-weight:700;margin-bottom:8px">💼 工作日版</div>
   <h1>🥗 盛天轻食助手</h1>
   <div class="sub">新手减脂 · 不挨饿 · 不焦虑 · 好好吃饭也能瘦</div>
   <div class="brand">— 盛天网络员工专享 · 适配 10:00 上班节奏 —</div>
+  <div style="margin-top:10px;padding:8px 16px;background:#fff8f0;border:1px dashed #f0d8b0;border-radius:20px;display:inline-block;font-size:.82em;color:#b89060">🏖️ 周末版正在开发中，敬请期待~</div>
 </div>
 
 <!-- STEP 1: Profile -->
@@ -225,10 +229,10 @@ body{
 
 <!-- Breakfast -->
 <div class="card" id="breakfastCard">
-  <div class="meal-header" style="margin-bottom:10px">
-    <div>
-      <h2 style="margin:0">🌅 早餐 <span style="font-size:.75em;color:var(--muted);font-weight:400">约 8:00-8:30</span></h2>
-      <span style="font-size:.78em;color:var(--muted)">（10点上班，通勤30-60分钟，起床后在家/路上搞定）</span>
+  <div class="meal-header">
+    <div class="meal-title">
+      <h2>🌅 早餐</h2>
+      <div class="meal-meta">约 8:00-8:30 · 10点上班，通勤30-60分钟，起床后在家/路上搞定</div>
     </div>
     <button class="btn-refresh" onclick="refreshMeal('breakfast')">🔄 换一套</button>
   </div>
@@ -237,10 +241,10 @@ body{
 
 <!-- Lunch -->
 <div class="card" id="lunchCard">
-  <div class="meal-header" style="margin-bottom:10px">
-    <div>
-      <h2 style="margin:0">☀️ 午餐 <span style="font-size:.75em;color:var(--muted);font-weight:400">约 12:00-12:30</span></h2>
-      <span style="font-size:.78em;color:var(--muted)">（公司午休时间，下楼吃或外卖到工位）</span>
+  <div class="meal-header">
+    <div class="meal-title">
+      <h2>☀️ 午餐</h2>
+      <div class="meal-meta">约 12:00-12:30 · 公司午休时间，下楼吃或外卖到工位</div>
     </div>
     <button class="btn-refresh" onclick="refreshMeal('lunch')">🔄 换一套</button>
   </div>
@@ -249,10 +253,10 @@ body{
 
 <!-- Afternoon snack -->
 <div class="card" id="snackCard">
-  <div class="meal-header" style="margin-bottom:10px">
-    <div>
-      <h2 style="margin:0">🍵 下午茶 & 水果 <span style="font-size:.75em;color:var(--muted);font-weight:400">约 15:00-16:00</span></h2>
-      <span style="font-size:.78em;color:var(--muted)">（下午最容易饿的时候，来点健康的，拒绝奶茶诱惑！）</span>
+  <div class="meal-header">
+    <div class="meal-title">
+      <h2>🍵 下午茶 & 水果</h2>
+      <div class="meal-meta">约 15:00-16:00 · 下午最容易饿的时候，来点健康的，拒绝奶茶诱惑！</div>
     </div>
     <button class="btn-refresh" onclick="refreshMeal('snack')">🔄 换一套</button>
   </div>
@@ -261,10 +265,10 @@ body{
 
 <!-- Dinner -->
 <div class="card" id="dinnerCard">
-  <div class="meal-header" style="margin-bottom:10px">
-    <div>
-      <h2 style="margin:0">🌙 晚餐 <span style="font-size:.75em;color:var(--muted);font-weight:400">约 19:30-20:00</span></h2>
-      <span style="font-size:.78em;color:var(--muted)">（7点下班+通勤到家，轻食为主，别吃太撑影响睡眠）</span>
+  <div class="meal-header">
+    <div class="meal-title">
+      <h2>🌙 晚餐</h2>
+      <div class="meal-meta">约 19:30-20:00 · 7点下班+通勤到家，轻食为主，别吃太撑影响睡眠</div>
     </div>
     <button class="btn-refresh" onclick="refreshMeal('dinner')">🔄 换一套</button>
   </div>
@@ -461,13 +465,13 @@ function renderMeal(mealType, items, plan){
     html += `<div class="food-item">
       <div class="food-info">
         <div class="food-name">${item.name}</div>
-        <div class="food-source"><span>📍 怎么来</span> ${item.source}</div>
-        <div style="font-size:.78em;color:var(--muted);margin-top:1px">⏱ 耗时约 ${item.time||'10分钟'}</div>
+        <div class="food-source"><span>📍 来源</span> ${item.source}</div>
+        <div class="food-time">⏱ 耗时约 ${item.time||'10分钟'}</div>
       </div>
-      <div class="food-cal">${item.cal} kcal</div>
+      <div class="food-cal">${item.cal}<br><span style="font-size:.7em;font-weight:400;color:var(--muted)">kcal</span></div>
     </div>`;
   });
-  html += `<div style="text-align:right;font-size:.85em;color:var(--muted);margin-top:6px">本餐合计: <strong style="color:var(--accent2)">${totalCal} kcal</strong></div>`;
+  html += `<div class="meal-total">本餐合计 <strong style="color:var(--accent2);font-size:1.1em">${totalCal} kcal</strong></div>`;
   container.innerHTML = html;
 }
 
@@ -602,7 +606,37 @@ function renderSummary(plan){
   });
   const conicGradient = conicParts.join(', ');
 
+  // Macros donut chart
+  const proteinKcal = proteinEst * 4;
+  const carbKcal = carbEst * 4;
+  const fatKcal = fatEst * 9;
+  const macroTotal = proteinKcal + carbKcal + fatKcal;
+  const macroData = [
+    {label:'蛋白质', cal:proteinKcal, pct:Math.round(proteinKcal/macroTotal*100), color:'#e07060'},
+    {label:'碳水化合物', cal:carbKcal, pct:Math.round(carbKcal/macroTotal*100), color:'#f0a868'},
+    {label:'脂肪', cal:fatKcal, pct:Math.round(fatKcal/macroTotal*100), color:'#7eb8a0'},
+  ];
+  // Balance assessment
+  let macroNote = '';
+  const protPct = macroData[0].pct;
+  const fatPct = macroData[2].pct;
+  if(protPct >= 18 && protPct <= 28 && fatPct >= 20 && fatPct <= 35){
+    macroNote = '✅ 三大营养素比例合理，继续保持！';
+  } else if(protPct < 18){
+    macroNote = '⚠️ 蛋白质占比偏低，建议增加鸡胸肉、鱼虾、蛋奶类食物';
+  } else if(fatPct > 35){
+    macroNote = '⚠️ 脂肪占比偏高，注意减少油炸和高油烹饪的食物';
+  }
+
+  let macroConicParts = [];
+  let mcum = 0;
+  macroData.forEach(d=>{
+    macroConicParts.push(`${d.color} ${mcum}% ${mcum+d.pct}%`);
+    mcum += d.pct;
+  });
+
   container.innerHTML = `
+    <h3 style="margin:0 0 12px 0">🍽️ 热量分配</h3>
     <div class="donut-wrap">
       <div class="donut-chart" style="background:conic-gradient(${conicGradient})">
         <div class="donut-center">
@@ -621,13 +655,32 @@ function renderSummary(plan){
         `).join('')}
       </div>
     </div>
+    <h3 style="margin:16px 0 12px 0">🧬 能量来源构成</h3>
+    <div class="donut-wrap">
+      <div class="donut-chart" style="background:conic-gradient(${macroConicParts.join(', ')})">
+        <div class="donut-center">
+          <div class="dnum" style="font-size:1em">${protPct}:${macroData[1].pct}:${fatPct}</div>
+          <div class="dlbl">蛋:碳:脂</div>
+        </div>
+      </div>
+      <div class="donut-legend">
+        ${macroData.map(d=>`
+          <div class="leg-item">
+            <div class="leg-dot" style="background:${d.color}"></div>
+            <span>${d.label}</span>
+            <strong style="margin-left:auto">${d.pct}%</strong>
+          </div>
+        `).join('')}
+        <div style="margin-top:8px;font-size:.82em;color:${macroNote.startsWith('✅')?'var(--accent2)':'var(--warm2)'}">${macroNote}</div>
+      </div>
+    </div>
     <table class="summary-table">
       <tr><th>项目</th><th>数值</th><th>说明</th></tr>
       <tr><td>今日总摄入</td><td><strong>${totalCal} kcal</strong></td><td>目标 ${cal.targetLow}-${cal.targetHigh} kcal</td></tr>
       <tr><td>偏差</td><td><span class="${tagClass}">${diff>0?'+':''}${diff} kcal (${diffPercent>0?'+':''}${diffPercent}%)</span></td><td>${assessment}</td></tr>
-      <tr><td>估算蛋白质</td><td>~${proteinEst} g</td><td>减脂期建议 1.2-1.6g/kg 体重</td></tr>
-      <tr><td>估算碳水</td><td>~${carbEst} g</td><td>粗粮比精制碳水更有饱腹感</td></tr>
-      <tr><td>估算脂肪</td><td>~${fatEst} g</td><td>来源主要是食物自带 非额外添加</td></tr>
+      <tr><td>蛋白质</td><td>~${proteinEst} g (${protPct}%)</td><td>减脂期建议 ≥1.2g/kg · ${proteinEst>=50?'✅ 充足':proteinEst>=35?'⚠️ 可再多一点':'🔴 偏少'}</td></tr>
+      <tr><td>碳水</td><td>~${carbEst} g (${macroData[1].pct}%)</td><td>优选粗粮 · ${macroData[1].pct>=40&&macroData[1].pct<=55?'✅ 合理':macroData[1].pct>55?'⚠️ 偏高，可减精制碳水':'⚠️ 偏低，运动后需补充'}</td></tr>
+      <tr><td>脂肪</td><td>~${fatEst} g (${fatPct}%)</td><td>${fatPct<=30?'✅ 健康水平':fatPct<=35?'⚠️ 稍高，注意烹饪油量':'🔴 偏高，减少油炸'}</td></tr>
     </table>
     <div style="margin-top:12px">
       ${notes.map(n=>`<p style="margin:6px 0;font-size:.9em">${n}</p>`).join('')}
