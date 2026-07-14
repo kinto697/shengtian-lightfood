@@ -18,8 +18,6 @@ body{
   padding:16px; min-height:100vh;
 }
 .container{max-width:760px;margin:0 auto}
-
-/* Header */
 .header{
   text-align:center; padding:28px 20px 20px; margin-bottom:16px;
   background:linear-gradient(135deg,#e8f5ee,#f0f7f3);
@@ -28,8 +26,6 @@ body{
 .header h1{font-size:1.6em;color:#3d6b52;margin-bottom:4px}
 .header .sub{font-size:.9em;color:var(--muted)}
 .header .brand{font-size:.8em;color:#b8a89a;margin-top:4px}
-
-/* Cards */
 .card{
   background:var(--card); border-radius:var(--radius);
   padding:22px 24px; margin-bottom:14px;
@@ -38,18 +34,15 @@ body{
 .card h2{font-size:1.15em;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .card h3{font-size:1em;margin:10px 0 6px;color:#5a4640}
 
-/* Form */
-.form-row{display:flex;gap:12px;flex-wrap:wrap;align-items:end;margin:10px 0}
+.form-row{display:flex;gap:10px;flex-wrap:wrap;align-items:end;margin:10px 0}
 .form-group{display:flex;flex-direction:column;gap:4px}
 .form-group label{font-size:.85em;font-weight:600;color:#6b5e58}
 .form-group select,.form-group input{
   padding:10px 14px;border:2px solid var(--border);border-radius:10px;
   font-size:1em;font-family:inherit;background:#fdfcfb;
-  transition:border-color .2s;
+  transition:border-color .2s;width:100%;
 }
-.form-group select:focus,.form-group input:focus{
-  outline:none;border-color:var(--accent);
-}
+.form-group select:focus,.form-group input:focus{outline:none;border-color:var(--accent)}
 .btn{
   padding:10px 22px;border:none;border-radius:10px;font-size:1em;
   font-weight:600;font-family:inherit;cursor:pointer;transition:all .2s;
@@ -62,30 +55,27 @@ body{
   transition:all .2s;white-space:nowrap;
 }
 .btn-refresh:hover{background:var(--accent);color:#fff}
-
-/* Calorie display */
-.calorie-bar{
-  display:flex;gap:16px;flex-wrap:wrap;margin:12px 0;
+.cat-select{
+  padding:5px 10px;border:1.5px solid var(--border);border-radius:20px;
+  font-size:.8em;font-family:inherit;background:#fdfcfb;cursor:pointer;
+  color:var(--text);white-space:nowrap;
 }
+.cat-select:focus{outline:none;border-color:var(--accent)}
+
+.calorie-bar{display:flex;gap:16px;flex-wrap:wrap;margin:12px 0}
 .calorie-card{
-  flex:1;min-width:120px;text-align:center;
-  padding:14px 12px;border-radius:12px;background:#f7faf8;
+  flex:1;min-width:110px;text-align:center;
+  padding:14px 10px;border-radius:12px;background:#f7faf8;
   border:1px solid #d8e8dc;
 }
-.calorie-card .num{font-size:1.6em;font-weight:700;color:var(--accent2)}
-.calorie-card .label{font-size:.78em;color:var(--muted);margin-top:2px}
+.calorie-card .num{font-size:1.5em;font-weight:700;color:var(--accent2)}
+.calorie-card .label{font-size:.76em;color:var(--muted);margin-top:2px}
 
-/* Meal card */
-.meal-card{
-  background:#fdfcfb;border:1px solid var(--border);border-radius:12px;
-  padding:18px 20px;margin:10px 0;
-}
-.meal-header{
-  display:flex;justify-content:space-between;align-items:flex-start;
-  margin-bottom:12px;gap:12px;
-}
+.meal-card{background:#fdfcfb;border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin:10px 0}
+.meal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px;flex-wrap:wrap}
 .meal-header .meal-title h2{margin:0 0 2px 0;font-size:1.1em}
 .meal-header .meal-meta{font-size:.78em;color:var(--muted);line-height:1.5}
+.meal-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;flex-shrink:0}
 .food-item{
   display:flex;justify-content:space-between;align-items:flex-start;
   gap:16px;padding:12px 0;border-bottom:1px dotted #f0e8e0;
@@ -96,12 +86,12 @@ body{
 .food-info .food-source{font-size:.82em;color:var(--muted);line-height:1.5;margin-bottom:2px}
 .food-info .food-source span{background:#fff3e8;padding:1px 6px;border-radius:4px;margin-right:4px;font-size:.8em}
 .food-info .food-time{font-size:.78em;color:#b8a89a}
+.food-info .food-macros{font-size:.76em;color:#b8a89a;margin-top:2px}
 .food-cal{font-weight:700;color:var(--warm2);white-space:nowrap;font-size:1em;text-align:right;padding-top:2px}
-.meal-total{text-align:right;font-size:.85em;color:var(--muted);margin-top:10px;padding-top:8px;border-top:1px solid #f0e8e0}
+.meal-total{text-align:right;font-size:.85em;color:var(--muted);margin-top:10px;padding-top:8px;border-top:1px solid #f0e8e8}
 
-/* Snack section */
 .snack-row{display:flex;gap:12px;flex-wrap:wrap}
-.snack-row .snack-item{
+.snack-item{
   flex:1;min-width:140px;background:#fffaf5;
   border:1px solid #f0e0d0;border-radius:10px;
   padding:12px 14px;text-align:center;
@@ -109,8 +99,8 @@ body{
 .snack-item .snack-emoji{font-size:1.8em}
 .snack-item .snack-name{font-weight:600;font-size:.9em;margin:4px 0}
 .snack-item .snack-cal{font-size:.82em;color:var(--warm2)}
+.snack-item .snack-macros{font-size:.75em;color:var(--muted)}
 
-/* Summary */
 .summary-table{width:100%;border-collapse:collapse;font-size:.88em;margin:10px 0}
 .summary-table th,.summary-table td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--border)}
 .summary-table th{background:#f8f5f1;font-weight:600}
@@ -118,46 +108,37 @@ body{
 .tag-warn{color:var(--warm2);font-weight:600}
 .tag-over{color:var(--danger);font-weight:600}
 
-/* Summary bar */
-.bar-wrap{height:8px;background:#eee;border-radius:4px;margin:4px 0 8px;overflow:hidden}
-.bar-fill{height:100%;border-radius:4px;transition:width .4s}
-.bar-fill.good{background:var(--accent)}
-.bar-fill.warn{background:var(--warm)}
-.bar-fill.over{background:var(--danger)}
-
-/* Donut chart */
 .donut-wrap{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin:12px 0}
-.donut-chart{
-  width:160px;height:160px;border-radius:50%;position:relative;
-  flex-shrink:0;
-}
+.donut-chart{width:150px;height:150px;border-radius:50%;position:relative;flex-shrink:0}
 .donut-center{
   position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:90px;height:90px;background:#fff;border-radius:50%;
+  width:84px;height:84px;background:#fff;border-radius:50%;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
 }
-.donut-center .dnum{font-size:1.3em;font-weight:700;color:var(--text)}
-.donut-center .dlbl{font-size:.7em;color:var(--muted)}
-.donut-legend{flex:1;min-width:160px}
-.donut-legend .leg-item{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:.85em}
-.donut-legend .leg-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.donut-center .dnum{font-size:1.2em;font-weight:700;color:var(--text)}
+.donut-center .dlbl{font-size:.68em;color:var(--muted)}
+.donut-legend{flex:1;min-width:150px}
+.donut-legend .leg-item{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:.82em}
+.donut-legend .leg-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
 
-/* Footer */
 .footer{text-align:center;color:var(--muted);font-size:.8em;padding:20px;line-height:1.8}
 
-/* Responsive */
 @media(max-width:500px){
-  .card{padding:16px 14px}
+  .card{padding:14px 12px}
   .form-row{flex-direction:column}
   .calorie-bar{flex-direction:column}
   .snack-row{flex-direction:column}
+  .meal-header{flex-direction:column}
+  .meal-actions{width:100%}
+  .donut-wrap{flex-direction:column;align-items:center}
+  .form-group{width:100%}
+  .form-group select,.form-group input{width:100%}
 }
 </style>
 </head>
 <body>
 <div class="container">
 
-<!-- HEADER -->
 <div class="header">
   <div style="display:inline-block;background:var(--accent);color:#fff;padding:4px 14px;border-radius:20px;font-size:.8em;font-weight:700;margin-bottom:8px">💼 工作日版</div>
   <h1>🥗 盛天轻食助手</h1>
@@ -166,10 +147,9 @@ body{
   <div style="margin-top:10px;padding:8px 16px;background:#fff8f0;border:1px dashed #f0d8b0;border-radius:20px;display:inline-block;font-size:.82em;color:#b89060">🏖️ 周末版正在开发中，敬请期待~</div>
 </div>
 
-<!-- STEP 1: Profile -->
 <div class="card" id="step1">
   <h2>👤 先告诉我你的基本信息</h2>
-  <p style="font-size:.85em;color:var(--muted);margin-bottom:10px">用来估算你每天大概需要多少热量，不严格，放轻松~</p>
+  <p style="font-size:.85em;color:var(--muted);margin-bottom:10px">用来更准确地计算你的每日热量需求，输入身高体重会更精确哦~</p>
   <div class="form-row">
     <div class="form-group">
       <label>性别</label>
@@ -178,499 +158,361 @@ body{
     <div class="form-group">
       <label>年龄</label>
       <select id="age">
-        <option value="">请选择</option>
-        <option value="22">22-25岁（刚毕业打工人）</option>
-        <option value="27">26-30岁（职场熟手）</option>
-        <option value="32">31-35岁（中坚力量）</option>
-        <option value="37">36-40岁（资深大佬）</option>
-        <option value="42">41-45岁（老盛天人）</option>
-        <option value="47">46-50岁（定海神针）</option>
-        <option value="52">51-55岁（行业前辈）</option>
+        <option value="">请选择</option><option value="22">22-25岁</option><option value="27">26-30岁</option><option value="32">31-35岁</option><option value="37">36-40岁</option><option value="42">41-45岁</option><option value="47">46-50岁</option><option value="52">51-55岁</option>
       </select>
+    </div>
+    <div class="form-group">
+      <label>身高 (cm)</label>
+      <input type="number" id="height" placeholder="如 165" min="140" max="210" value="165">
+    </div>
+    <div class="form-group">
+      <label>体重 (kg)</label>
+      <input type="number" id="weight" placeholder="如 60" min="35" max="180" value="60">
     </div>
     <button class="btn btn-primary" onclick="generatePlan()" style="align-self:end">开始规划 🚀</button>
   </div>
 </div>
 
-<!-- STEP 2: Results (hidden initially) -->
 <div id="step2" style="display:none">
 
-<!-- Calorie target -->
 <div class="card" id="calorieCard">
-  <h2>🎯 你今天的推荐热量</h2>
+  <h2>🎯 你的推荐热量</h2>
   <p style="font-size:.85em;color:var(--muted);margin-bottom:8px">
-    根据你的性别和年龄估算，减脂期建议每天摄入 <strong id="calRange"></strong> 大卡
-    <br>（比正常维持体重少约 300-400 大卡，很温和，不会饿到怀疑人生）
+    根据你的身高体重和年龄精准计算，减脂期建议每日摄入 <strong id="calRange"></strong> 大卡
+    <br>（比维持体重少约 350 大卡，温和不挨饿）
   </p>
   <div class="calorie-bar">
-    <div class="calorie-card">
-      <div class="num" id="calTarget"></div>
-      <div class="label">建议摄入 / 天</div>
-    </div>
-    <div class="calorie-card">
-      <div class="num" id="calBreakfast"></div>
-      <div class="label">早餐分配 (~25%)</div>
-    </div>
-    <div class="calorie-card">
-      <div class="num" id="calLunch"></div>
-      <div class="label">午餐分配 (~35%)</div>
-    </div>
-    <div class="calorie-card">
-      <div class="num" id="calDinner"></div>
-      <div class="label">晚餐分配 (~30%)</div>
-    </div>
-    <div class="calorie-card">
-      <div class="num" id="calSnack"></div>
-      <div class="label">加餐配额 (~10%)</div>
-    </div>
+    <div class="calorie-card"><div class="num" id="calTarget"></div><div class="label">建议摄入 / 天</div></div>
+    <div class="calorie-card"><div class="num" id="calBreakfast"></div><div class="label">早餐 (~25%)</div></div>
+    <div class="calorie-card"><div class="num" id="calLunch"></div><div class="label">午餐 (~35%)</div></div>
+    <div class="calorie-card"><div class="num" id="calDinner"></div><div class="label">晚餐 (~30%)</div></div>
+    <div class="calorie-card"><div class="num" id="calSnack"></div><div class="label">加餐 (~10%)</div></div>
   </div>
-  <button class="btn btn-primary" onclick="randomizeAll()" style="margin-top:8px">🔄 全部刷新（给我全新的今天！）</button>
+  <button class="btn btn-primary" onclick="randomizeAll()" style="margin-top:8px">🔄 全部刷新</button>
 </div>
 
-<!-- Breakfast -->
+<!-- BREAKFAST -->
 <div class="card" id="breakfastCard">
   <div class="meal-header">
-    <div class="meal-title">
-      <h2>🌅 早餐</h2>
-      <div class="meal-meta">约 8:00-8:30 · 10点上班，通勤30-60分钟，起床后在家/路上搞定</div>
+    <div class="meal-title"><h2>🌅 早餐</h2><div class="meal-meta">约 8:00-8:30 · 10点上班，通勤30-60分钟，起床后搞定</div></div>
+    <div class="meal-actions">
+      <select class="cat-select" id="breakfastCat" onchange="refreshMeal('breakfast')"><option value="all">🎲 全部随机</option><option value="outside">🛵 外面吃</option><option value="homemade">🍳 自己做</option><option value="convenience">🏪 便利店</option></select>
+      <button class="btn-refresh" onclick="refreshMeal('breakfast')">🔄 换一套</button>
     </div>
-    <button class="btn-refresh" onclick="refreshMeal('breakfast')">🔄 换一套</button>
   </div>
   <div id="breakfastItems"></div>
 </div>
 
-<!-- Lunch -->
+<!-- LUNCH -->
 <div class="card" id="lunchCard">
   <div class="meal-header">
-    <div class="meal-title">
-      <h2>☀️ 午餐</h2>
-      <div class="meal-meta">约 12:00-12:30 · 公司午休时间，下楼吃或外卖到工位</div>
+    <div class="meal-title"><h2>☀️ 午餐</h2><div class="meal-meta">约 12:00-12:30 · 公司午休，下楼吃或外卖到工位</div></div>
+    <div class="meal-actions">
+      <select class="cat-select" id="lunchCat" onchange="refreshMeal('lunch')"><option value="all">🎲 全部随机</option><option value="outside">🛵 外面吃</option><option value="homemade">🍳 自己做</option></select>
+      <button class="btn-refresh" onclick="refreshMeal('lunch')">🔄 换一套</button>
     </div>
-    <button class="btn-refresh" onclick="refreshMeal('lunch')">🔄 换一套</button>
   </div>
   <div id="lunchItems"></div>
 </div>
 
-<!-- Afternoon snack -->
+<!-- SNACK -->
 <div class="card" id="snackCard">
   <div class="meal-header">
-    <div class="meal-title">
-      <h2>🍵 下午茶 & 水果</h2>
-      <div class="meal-meta">约 15:00-16:00 · 下午最容易饿的时候，来点健康的，拒绝奶茶诱惑！</div>
+    <div class="meal-title"><h2>🍵 下午茶 & 水果</h2><div class="meal-meta">约 15:00-16:00 · 下午最饿的时候，拒绝奶茶诱惑！</div></div>
+    <div class="meal-actions">
+      <button class="btn-refresh" onclick="refreshMeal('snack')">🔄 换一套</button>
     </div>
-    <button class="btn-refresh" onclick="refreshMeal('snack')">🔄 换一套</button>
   </div>
   <div class="snack-row" id="snackItems"></div>
 </div>
 
-<!-- Dinner -->
+<!-- DINNER -->
 <div class="card" id="dinnerCard">
   <div class="meal-header">
-    <div class="meal-title">
-      <h2>🌙 晚餐</h2>
-      <div class="meal-meta">约 19:30-20:00 · 7点下班+通勤到家，轻食为主，别吃太撑影响睡眠</div>
+    <div class="meal-title"><h2>🌙 晚餐</h2><div class="meal-meta">约 19:30-20:00 · 7点下班+通勤到家，轻食为主</div></div>
+    <div class="meal-actions">
+      <select class="cat-select" id="dinnerCat" onchange="refreshMeal('dinner')"><option value="all">🎲 全部随机</option><option value="outside">🛵 外面吃</option><option value="homemade">🍳 自己做</option><option value="convenience">🏪 便利店</option></select>
+      <button class="btn-refresh" onclick="refreshMeal('dinner')">🔄 换一套</button>
     </div>
-    <button class="btn-refresh" onclick="refreshMeal('dinner')">🔄 换一套</button>
   </div>
   <div id="dinnerItems"></div>
 </div>
 
-<!-- Summary -->
 <div class="card" id="summaryCard">
   <h2>📊 今日营养总结</h2>
   <div id="summaryContent"></div>
 </div>
 
-<!-- Footer -->
 <div class="footer">
-  <p>🥗 盛天轻食助手 · 新手减脂友好</p>
-  <p>热量数据仅供参考，每个人的身体状况不同，建议配合适量运动</p>
+  <p>🥗 盛天轻食助手 · 新手减脂友好 · 营养素为粗略估算仅供参考</p>
   <p>如有特殊健康状况，请咨询专业营养师或医生</p>
-  <p style="margin-top:6px;color:#c0b8b0">Made with 💚 for 盛天网络的小伙伴们</p>
 </div>
 
-</div><!-- /step2 -->
-
-</div><!-- /container -->
+</div></div>
 
 <script>
-// ========== FOOD DATABASE ==========
-// Each food item: {name, cal, source, time}
+// ========== FOOD DATABASE (name, cal, category, protein_g, carbs_g, fat_g, source, time) ==========
+// category: "homemade" | "outside" | "convenience"
 
 const breakfastPool = [
-  {name:"水煮蛋2个 + 全麦面包1片", cal:220, source:"自己做 · 煮蛋8分钟 + 烤面包2分钟", time:"10分钟"},
-  {name:"无糖豆浆1杯 + 菜包2个", cal:280, source:"早餐店/便利店 · 全家/罗森/7-11 均有", time:"路上顺手买"},
-  {name:"燕麦牛奶粥 + 煮鸡蛋1个", cal:260, source:"自己做 · 燕麦片2分钟冲泡 + 蛋提前煮好", time:"5分钟"},
-  {name:"玉米1根 + 纯牛奶1盒 + 鸡蛋1个", cal:300, source:"玉米提前煮好或便利店买 · 牛奶超市/便利店", time:"5分钟"},
-  {name:"全麦三明治 + 美式咖啡(无糖)", cal:250, source:"全家/罗森/7-11 · 选全麦面包款", time:"路上顺手买"},
-  {name:"小米粥1碗 + 蒸饺4个(素馅)", cal:270, source:"早餐店或粥铺 · 美团/饿了么早餐外卖", time:"外卖20分钟"},
-  {name:"紫薯1个 + 酸奶1杯 + 水煮蛋1个", cal:290, source:"紫薯提前蒸好 · 酸奶超市买", time:"10分钟(提前准备)"},
-  {name:"杂粮煎饼(少酱) + 无糖豆浆", cal:310, source:"煎饼摊 · 跟老板说少放酱、多加生菜", time:"路上顺手买"},
-  {name:"蒸南瓜200g + 鸡蛋白3个 + 黑咖啡", cal:240, source:"自己做 · 南瓜蒸10分钟 · 蛋提前煮好", time:"12分钟"},
-  {name:"荞麦面1碗(清汤) + 青菜 + 荷包蛋", cal:290, source:"自己做 · 面煮5分钟+蛋煎2分钟", time:"10分钟"},
-  {name:"隔夜燕麦杯(Overnight Oats)", cal:320, source:"自己做 · 前一晚做好放冰箱 早上直接吃", time:"前一晚5分钟"},
-  {name:"香蕉1根 + 蛋白粉1勺 + 脱脂牛奶", cal:280, source:"蛋白粉网购 · 牛奶便利店 · 摇一摇就走", time:"2分钟"},
+  {name:"水煮蛋2个 + 全麦面包1片", cal:220, cat:"homemade", p:18, c:22, f:8, source:"自己做 · 煮蛋8分钟+烤面包2分钟", time:"10分钟"},
+  {name:"无糖豆浆1杯 + 菜包2个", cal:280, cat:"convenience", p:12, c:40, f:8, source:"便利店 · 全家/罗森/7-11 均有", time:"路上顺手买"},
+  {name:"燕麦牛奶粥 + 煮鸡蛋1个", cal:260, cat:"homemade", p:16, c:35, f:7, source:"自己做 · 燕麦片2分钟冲泡+蛋提前煮好", time:"5分钟"},
+  {name:"玉米1根 + 纯牛奶1盒 + 鸡蛋1个", cal:300, cat:"convenience", p:15, c:40, f:9, source:"便利店买玉米+牛奶+茶叶蛋", time:"路上顺手买"},
+  {name:"全麦三明治 + 美式咖啡(无糖)", cal:250, cat:"convenience", p:10, c:32, f:9, source:"全家/罗森/7-11 · 选全麦面包款", time:"路上顺手买"},
+  {name:"小米粥1碗 + 蒸饺4个(素馅)", cal:270, cat:"outside", p:10, c:45, f:6, source:"早餐店/粥铺 · 美团/饿了么早餐外卖", time:"外卖20分钟"},
+  {name:"紫薯1个 + 酸奶1杯 + 水煮蛋1个", cal:290, cat:"homemade", p:14, c:38, f:9, source:"紫薯提前蒸好 · 酸奶超市买", time:"10分钟(提前准备)"},
+  {name:"杂粮煎饼(少酱) + 无糖豆浆", cal:310, cat:"outside", p:12, c:48, f:8, source:"煎饼摊 · 跟老板说少放酱多加生菜", time:"路上顺手买"},
+  {name:"蒸南瓜200g + 鸡蛋白3个 + 黑咖啡", cal:240, cat:"homemade", p:22, c:28, f:3, source:"自己做 · 南瓜蒸10分钟+蛋提前煮好", time:"12分钟"},
+  {name:"荞麦面1碗(清汤) + 青菜 + 荷包蛋", cal:290, cat:"homemade", p:14, c:38, f:9, source:"自己做 · 面煮5分钟+蛋煎2分钟", time:"10分钟"},
+  {name:"隔夜燕麦杯(Overnight Oats)", cal:320, cat:"homemade", p:13, c:48, f:10, source:"前一晚做好放冰箱 · 早上直接吃", time:"前一晚5分钟"},
+  {name:"香蕉1根 + 蛋白粉1勺 + 脱脂牛奶", cal:280, cat:"homemade", p:28, c:32, f:3, source:"蛋白粉网购 · 牛奶便利店 · 摇一摇就走", time:"2分钟"},
 ];
 
 const lunchPool = [
-  {name:"鸡胸肉沙拉 + 杂粮饭小碗", cal:380, source:"轻食外卖 · 美团/饿了么搜「轻食沙拉」", time:"外卖30分钟"},
-  {name:"清蒸鱼套餐(鲈鱼/鳕鱼) + 西兰花", cal:350, source:"中式快餐 · 老乡鸡/大米先生/真功夫等", time:"楼下/外卖20分钟"},
-  {name:"番茄牛肉糙米饭(少油版)", cal:420, source:"健康餐外卖 · 美团搜「健身餐」「减脂餐」", time:"外卖30分钟"},
-  {name:"鸡腿饭(去皮) + 青菜 + 米饭半碗", cal:400, source:"中式快餐 · 沙县小吃/隆江猪脚饭等 选鸡腿去皮", time:"楼下/外卖15分钟"},
-  {name:"菌菇豆腐汤 + 杂粮馒头1个 + 凉拌黄瓜", cal:340, source:"自己做可带饭 · 豆腐+菌菇煮10分钟", time:"20分钟(可前一晚准备)"},
-  {name:"牛肉面(少面多菜) + 卤蛋", cal:430, source:"兰州拉面/面馆 · 跟老板说少面多青菜", time:"楼下/外卖15分钟"},
-  {name:"三文鱼/金枪鱼波奇饭(Poke Bowl)", cal:410, source:"轻食店 · 美团/饿了么搜「波奇饭」「夏威夷饭」", time:"外卖35分钟"},
-  {name:"麻辣烫(清汤底+多蔬菜+少丸子)", cal:370, source:"杨国福/张亮麻辣烫 · 选清汤汤底 多拿蔬菜豆腐", time:"楼下/外卖20分钟"},
-  {name:"照烧鸡腿 + 烤蔬菜(南瓜/芦笋/彩椒)", cal:390, source:"自己做 · 鸡腿腌10分钟+空气炸锅15分钟", time:"30分钟"},
-  {name:"虾仁滑蛋 + 杂粮饭 + 白灼生菜", cal:360, source:"自己做带饭 · 虾仁+蛋5分钟 生菜焯水1分钟", time:"15分钟"},
-  {name:"酸菜鱼(小份) + 米饭半碗", cal:400, source:"太二酸菜鱼/鱼你在一起等 · 选小份", time:"外卖25分钟"},
-  {name:"日式荞麦冷面(蘸汁) + 天妇罗蔬菜(少)", cal:350, source:"日料外卖 · 美团搜「荞麦面」", time:"外卖30分钟"},
-  {name:"鸡胸肉卷饼 + 蔬菜沙拉", cal:370, source:"轻食店 · 赛百味/连锁轻食品牌", time:"外卖/楼下20分钟"},
-  {name:"豆腐煲(海鲜/鸡肉) + 米饭小半碗", cal:380, source:"茶餐厅/煲仔饭店 · 选豆腐为主", time:"外卖25分钟"},
-  {name:"自制便当:鸡胸+西兰花+玉米粒+杂粮饭", cal:400, source:"自己前一晚做好 · 公司微波炉加热", time:"前一晚20分钟"},
+  {name:"鸡胸肉沙拉 + 杂粮饭小碗", cal:380, cat:"outside", p:35, c:38, f:10, source:"轻食外卖 · 美团/饿了么搜「轻食沙拉」", time:"外卖30分钟"},
+  {name:"清蒸鱼套餐(鲈鱼/鳕鱼) + 西兰花", cal:350, cat:"outside", p:32, c:28, f:12, source:"中式快餐 · 老乡鸡/大米先生/真功夫等", time:"楼下/外卖20分钟"},
+  {name:"番茄牛肉糙米饭(少油版)", cal:420, cat:"outside", p:28, c:48, f:14, source:"健康餐外卖 · 美团搜「健身餐」「减脂餐」", time:"外卖30分钟"},
+  {name:"鸡腿饭(去皮) + 青菜 + 米饭半碗", cal:400, cat:"outside", p:30, c:42, f:14, source:"中式快餐 · 沙县小吃等 · 选鸡腿去皮", time:"楼下/外卖15分钟"},
+  {name:"菌菇豆腐汤 + 杂粮馒头1个 + 凉拌黄瓜", cal:340, cat:"homemade", p:18, c:42, f:12, source:"自己做可带饭 · 豆腐+菌菇煮10分钟", time:"20分钟(可前一晚准备)"},
+  {name:"牛肉面(少面多菜) + 卤蛋", cal:430, cat:"outside", p:25, c:50, f:15, source:"兰州拉面/面馆 · 跟老板说少面多青菜", time:"楼下/外卖15分钟"},
+  {name:"三文鱼波奇饭(Poke Bowl)", cal:410, cat:"outside", p:28, c:42, f:16, source:"轻食店 · 美团/饿了么搜「波奇饭」", time:"外卖35分钟"},
+  {name:"麻辣烫(清汤底+多蔬菜+少丸子)", cal:370, cat:"outside", p:22, c:36, f:16, source:"杨国福/张亮麻辣烫 · 清汤汤底多拿蔬菜豆腐", time:"楼下/外卖20分钟"},
+  {name:"照烧鸡腿 + 烤蔬菜(南瓜/芦笋/彩椒)", cal:390, cat:"homemade", p:32, c:35, f:16, source:"鸡腿腌10分钟+空气炸锅15分钟", time:"30分钟"},
+  {name:"虾仁滑蛋 + 杂粮饭 + 白灼生菜", cal:360, cat:"homemade", p:30, c:38, f:10, source:"虾仁+蛋5分钟 · 生菜焯水1分钟", time:"15分钟"},
+  {name:"酸菜鱼(小份) + 米饭半碗", cal:400, cat:"outside", p:30, c:40, f:16, source:"太二酸菜鱼/鱼你在一起等 · 选小份", time:"外卖25分钟"},
+  {name:"日式荞麦冷面 + 蔬菜天妇罗(少量)", cal:350, cat:"outside", p:15, c:48, f:12, source:"日料外卖 · 美团搜「荞麦面」", time:"外卖30分钟"},
+  {name:"鸡胸肉卷饼 + 蔬菜沙拉", cal:370, cat:"outside", p:32, c:36, f:13, source:"轻食店 · 赛百味/连锁轻食品牌", time:"外卖/楼下20分钟"},
+  {name:"豆腐煲(海鲜/鸡肉) + 米饭小半碗", cal:380, cat:"outside", p:22, c:42, f:15, source:"茶餐厅/煲仔饭店 · 选豆腐为主", time:"外卖25分钟"},
+  {name:"自制便当:鸡胸+西兰花+玉米+杂粮饭", cal:400, cat:"homemade", p:36, c:40, f:12, source:"前一晚做好 · 公司微波炉加热", time:"前一晚20分钟"},
 ];
 
 const dinnerPool = [
-  {name:"番茄蛋汤 + 蒸紫薯1个 + 凉拌菠菜", cal:280, source:"自己做 · 蛋汤5分钟+紫薯提前蒸好", time:"15分钟"},
-  {name:"白灼虾200g + 杂粮粥1碗 + 青菜", cal:310, source:"自己做 · 虾白灼3分钟 · 粥用高压锅/电饭煲预约", time:"15分钟"},
-  {name:"鸡胸肉沙拉 + 南瓜汤", cal:290, source:"自己做 · 鸡胸肉煎8分钟+南瓜煮熟打泥", time:"20分钟"},
-  {name:"蒸鱼(小黄鱼/鲈鱼) + 水煮西兰花", cal:270, source:"自己做 · 鱼蒸8-10分钟+西兰花焯水", time:"15分钟"},
-  {name:"关东煮(蔬菜+豆腐+魔芋丝+鸡蛋)", cal:300, source:"便利店 · 全家/罗森/7-11 关东煮 选清汤", time:"路上顺手买"},
-  {name:"虾仁蔬菜粥 + 拌豆腐", cal:320, source:"粥店外卖 · 美团/饿了么搜「海鲜粥」「蔬菜粥」", time:"外卖25分钟"},
-  {name:"酸辣魔芋面(低卡版) + 鸡胸肉丝", cal:240, source:"自己做 · 魔芋面开水烫1分钟+调料拌匀", time:"8分钟"},
-  {name:"蔬菜蛋花汤 + 全麦馒头半个 + 凉拌木耳", cal:260, source:"自己做 · 蛋花汤5分钟+木耳提前泡好", time:"15分钟"},
-  {name:"烤三文鱼 + 芦笋 + 小土豆2个", cal:350, source:"自己做 · 烤箱/空气炸锅180度15分钟", time:"20分钟"},
-  {name:"豆腐蔬菜锅(豆乳锅底)", cal:280, source:"自己做 · 豆腐+各种蔬菜一锅煮", time:"15分钟"},
-  {name:"鸡茸玉米羹 + 蒸饺3个(素)", cal:300, source:"自己做或外卖 · 鸡胸肉剁茸+玉米煮8分钟", time:"20分钟"},
-  {name:"金枪鱼沙拉配全麦饼干", cal:260, source:"自己做 · 金枪鱼罐头(水浸)+生菜+饼干", time:"5分钟"},
-  {name:"清炒时蔬 + 蒸蛋羹 + 杂粮饭小半碗", cal:310, source:"自己做 · 蛋羹蒸8分钟+菜炒3分钟", time:"15分钟"},
-  {name:"牛油果鸡胸肉全麦三明治", cal:340, source:"轻食外卖 · 赛百味/连锁轻食品牌", time:"外卖20分钟"},
-  {name:"冬瓜排骨汤(少排骨) + 凉拌海带丝", cal:290, source:"自己做 · 汤用高压锅30分钟(可前一晚做)", time:"35分钟(含等待)"},
+  {name:"番茄蛋汤 + 蒸紫薯1个 + 凉拌菠菜", cal:280, cat:"homemade", p:14, c:35, f:10, source:"蛋汤5分钟+紫薯提前蒸好", time:"15分钟"},
+  {name:"白灼虾200g + 杂粮粥1碗 + 青菜", cal:310, cat:"homemade", p:32, c:30, f:6, source:"虾白灼3分钟 · 粥用高压锅预约", time:"15分钟"},
+  {name:"鸡胸肉沙拉 + 南瓜汤", cal:290, cat:"homemade", p:35, c:25, f:8, source:"鸡胸肉煎8分钟+南瓜煮熟打泥", time:"20分钟"},
+  {name:"蒸鱼(小黄鱼/鲈鱼) + 水煮西兰花", cal:270, cat:"homemade", p:30, c:18, f:9, source:"鱼蒸8-10分钟+西兰花焯水", time:"15分钟"},
+  {name:"关东煮(蔬菜+豆腐+魔芋丝+鸡蛋)", cal:300, cat:"convenience", p:18, c:35, f:10, source:"便利店 · 全家/罗森/7-11 关东煮选清汤", time:"路上顺手买"},
+  {name:"虾仁蔬菜粥 + 拌豆腐", cal:320, cat:"outside", p:22, c:40, f:8, source:"粥店外卖 · 美团搜「海鲜粥」「蔬菜粥」", time:"外卖25分钟"},
+  {name:"酸辣魔芋面(低卡版) + 鸡胸肉丝", cal:240, cat:"homemade", p:28, c:20, f:5, source:"魔芋面开水烫1分钟+调料拌匀", time:"8分钟"},
+  {name:"蔬菜蛋花汤 + 全麦馒头半个 + 凉拌木耳", cal:260, cat:"homemade", p:12, c:36, f:8, source:"蛋花汤5分钟+木耳提前泡好", time:"15分钟"},
+  {name:"烤三文鱼 + 芦笋 + 小土豆2个", cal:350, cat:"homemade", p:30, c:30, f:14, source:"烤箱/空气炸锅180度15分钟", time:"20分钟"},
+  {name:"豆腐蔬菜锅(豆乳锅底)", cal:280, cat:"homemade", p:20, c:28, f:12, source:"豆腐+各种蔬菜一锅煮", time:"15分钟"},
+  {name:"鸡茸玉米羹 + 蒸饺3个(素)", cal:300, cat:"homemade", p:22, c:36, f:9, source:"鸡胸肉剁茸+玉米煮8分钟", time:"20分钟"},
+  {name:"金枪鱼沙拉配全麦饼干", cal:260, cat:"homemade", p:25, c:22, f:9, source:"金枪鱼罐头(水浸)+生菜+饼干", time:"5分钟"},
+  {name:"清炒时蔬 + 蒸蛋羹 + 杂粮饭小半碗", cal:310, cat:"homemade", p:18, c:38, f:10, source:"蛋羹蒸8分钟+菜炒3分钟", time:"15分钟"},
+  {name:"牛油果鸡胸肉全麦三明治", cal:340, cat:"outside", p:28, c:35, f:14, source:"轻食外卖 · 赛百味/连锁轻食品牌", time:"外卖20分钟"},
+  {name:"冬瓜排骨汤(少排骨) + 凉拌海带丝", cal:290, cat:"homemade", p:16, c:28, f:14, source:"汤用高压锅30分钟(可前一晚做)", time:"35分钟(含等待)"},
 ];
 
 const afternoonSnacks = [
-  {name:"无糖酸奶1杯", emoji:"🥛", cal:90, source:"便利店/超市 · 选无糖/低脂款"},
-  {name:"每日坚果1小包(25g)", emoji:"🥜", cal:130, source:"超市/网购 · 注意选无盐版本"},
-  {name:"黑巧克力2小块(>70%)", emoji:"🍫", cal:80, source:"便利店/超市 · 选可可含量>70%的"},
-  {name:"即食鸡胸肉1小包", emoji:"🍗", cal:110, source:"便利店/网购 · 优形/肌肉小王子等品牌"},
-  {name:"海苔1小包", emoji:"🌿", cal:35, source:"便利店/超市 · 选原味非油炸"},
-  {name:"魔芋爽/魔芋丝(小包)", emoji:"🍜", cal:40, source:"便利店 · 低卡解馋小零食"},
-  {name:"蛋白棒1根", emoji:"💪", cal:140, source:"便利店/网购 · 选低糖版本"},
-  {name:"全麦饼干3片", emoji:"🍪", cal:100, source:"超市 · 选全麦/低糖款"},
-  {name:"毛豆/盐水毛豆1小碗", emoji:"🫘", cal:80, source:"便利店/自己做 · 毛豆煮熟即可"},
-  {name:"零卡果冻1个", emoji:"🍮", cal:10, source:"便利店/超市 · 蒟蒻果冻代糖版"},
+  {name:"无糖酸奶1杯", emoji:"🥛", cal:90, cat:"convenience", p:8, c:10, f:2, source:"便利店/超市 · 选无糖/低脂款"},
+  {name:"每日坚果1小包(25g)", emoji:"🥜", cal:130, cat:"convenience", p:4, c:5, f:11, source:"超市/网购 · 选无盐版本"},
+  {name:"黑巧克力2小块(>70%)", emoji:"🍫", cal:80, cat:"convenience", p:1, c:6, f:6, source:"便利店/超市 · 可可含量>70%"},
+  {name:"即食鸡胸肉1小包", emoji:"🍗", cal:110, cat:"convenience", p:22, c:2, f:2, source:"便利店/网购 · 优形/肌肉小王子"},
+  {name:"海苔1小包", emoji:"🌿", cal:35, cat:"convenience", p:2, c:2, f:1, source:"便利店/超市 · 选原味非油炸"},
+  {name:"魔芋爽1小包", emoji:"🍜", cal:40, cat:"convenience", p:1, c:8, f:0, source:"便利店 · 低卡解馋小零食"},
+  {name:"蛋白棒1根", emoji:"💪", cal:140, cat:"convenience", p:15, c:15, f:5, source:"便利店/网购 · 选低糖版本"},
+  {name:"全麦饼干3片", emoji:"🍪", cal:100, cat:"convenience", p:2, c:16, f:3, source:"超市 · 选全麦/低糖款"},
+  {name:"盐水毛豆1小碗", emoji:"🫘", cal:80, cat:"homemade", p:6, c:5, f:3, source:"便利店/自己做 · 毛豆煮熟即可"},
+  {name:"零卡果冻1个", emoji:"🍮", cal:10, cat:"convenience", p:0, c:2, f:0, source:"便利店/超市 · 蒟蒻代糖版"},
 ];
 
 const fruitPool = [
-  {name:"苹果1个(中等)", emoji:"🍎", cal:95, note:"高纤维 · 饱腹感强"},
-  {name:"香蕉1根(中等)", emoji:"🍌", cal:105, note:"补钾 · 运动后适合"},
-  {name:"蓝莓1小盒(125g)", emoji:"🫐", cal:70, note:"抗氧化 · 低糖水果之王"},
-  {name:"圣女果15颗", emoji:"🍅", cal:50, note:"超低卡 · 维C丰富"},
-  {name:"猕猴桃1个", emoji:"🥝", cal:55, note:"维C爆表 · 帮助消化"},
-  {name:"橙子1个", emoji:"🍊", cal:65, note:"补充维C · 增强免疫力"},
-  {name:"草莓10颗(约150g)", emoji:"🍓", cal:50, note:"低糖高颜值 · 幸福感拉满"},
-  {name:"柚子3瓣", emoji:"🍈", cal:60, note:"低GI · 帮助燃脂"},
-  {name:"梨1个", emoji:"🍐", cal:85, note:"润肺 · 秋天首选"},
-  {name:"火龙果半个(白心)", emoji:"🐉", cal:55, note:"通便神器 · 高纤维"},
+  {name:"苹果1个(中等)", emoji:"🍎", cal:95, p:0, c:22, f:0, note:"高纤维 · 饱腹感强"},
+  {name:"香蕉1根(中等)", emoji:"🍌", cal:105, p:1, c:25, f:0, note:"补钾 · 运动后适合"},
+  {name:"蓝莓1小盒(125g)", emoji:"🫐", cal:70, p:1, c:16, f:0, note:"抗氧化 · 低糖水果之王"},
+  {name:"圣女果15颗", emoji:"🍅", cal:50, p:2, c:8, f:0, note:"超低卡 · 维C丰富"},
+  {name:"猕猴桃1个", emoji:"🥝", cal:55, p:1, c:12, f:0, note:"维C爆表 · 帮助消化"},
+  {name:"橙子1个", emoji:"🍊", cal:65, p:1, c:14, f:0, note:"补充维C · 增强免疫力"},
+  {name:"草莓10颗(约150g)", emoji:"🍓", cal:50, p:1, c:10, f:0, note:"低糖高颜值 · 幸福感拉满"},
+  {name:"柚子3瓣", emoji:"🍈", cal:60, p:1, c:13, f:0, note:"低GI · 帮助燃脂"},
+  {name:"梨1个", emoji:"🍐", cal:85, p:0, c:20, f:0, note:"润肺 · 秋天首选"},
+  {name:"火龙果半个(白心)", emoji:"🐉", cal:55, p:1, c:11, f:0, note:"通便神器 · 高纤维"},
 ];
 
-// ========== CALORIE CALCULATION ==========
-function calcCalories(gender, age){
-  // Mifflin-St Jeor with avg Chinese adult stats
-  // Male: ~70kg, 170cm; Female: ~57kg, 158cm
-  let bmr;
-  if(gender==='male'){
-    bmr = 10*70 + 6.25*170 - 5*age + 5;
-  } else {
-    bmr = 10*57 + 6.25*158 - 5*age - 161;
-  }
-  // Sedentary office worker
-  const tdee = Math.round(bmr * 1.2);
-  // Gentle deficit: 300-400 kcal
-  const deficit = 350;
-  const target = tdee - deficit;
-  return {
-    bmr: Math.round(bmr),
-    tdee: tdee,
-    target: target,
-    targetLow: target - 100,
-    targetHigh: target + 100,
-    breakfast: Math.round(target * 0.25),
-    lunch: Math.round(target * 0.35),
-    dinner: Math.round(target * 0.30),
-    snackBudget: Math.round(target * 0.10),
-  };
-}
-
-// ========== RANDOM PICKER ==========
+// ========== HELPERS ==========
 function pickRandom(arr, n){
-  const shuffled = [...arr].sort(()=>Math.random()-0.5);
-  return shuffled.slice(0, Math.min(n, shuffled.length));
+  const s=[...arr].sort(()=>Math.random()-0.5);
+  return s.slice(0,Math.min(n,s.length));
 }
-
-function pickOneNot(arr, notThisName){
-  const pool = arr.filter(f=>f.name!==notThisName);
-  if(pool.length===0) pool.push(arr[0]);
-  return pool[Math.floor(Math.random()*pool.length)];
+function filterByCat(pool, cat){
+  if(cat==='all') return pool;
+  return pool.filter(f=>f.cat===cat);
 }
 
 // ========== STATE ==========
-let currentPlan = null;
+let currentPlan=null;
 
 function generatePlan(){
-  const gender = document.getElementById('gender').value;
-  const age = parseInt(document.getElementById('age').value);
-  if(!gender || !age){alert('请选择性别和年龄哦~');return;}
+  const gender=document.getElementById('gender').value;
+  const age=parseInt(document.getElementById('age').value);
+  const h=parseFloat(document.getElementById('height').value);
+  const w=parseFloat(document.getElementById('weight').value);
+  if(!gender||!age){alert('请选择性别和年龄~');return;}
+  if(!h||!w||h<100||w<20){alert('请输入合理的身高体重哦~（身高100-210cm，体重20-180kg）');return;}
 
-  const cal = calcCalories(gender, age);
+  const cal=calcCalories(gender,age,h,w);
+  const bCat=document.getElementById('breakfastCat').value;
+  const lCat=document.getElementById('lunchCat').value;
+  const dCat=document.getElementById('dinnerCat').value;
 
-  // Pick meals
-  const breakfastItems = pickRandom(breakfastPool, 1);
-  const lunchItems = pickRandom(lunchPool, 1);
-  const dinnerItems = pickRandom(dinnerPool, 1);
-  const snackPick = pickRandom(afternoonSnacks, 1)[0];
-  const fruitPick = pickRandom(fruitPool, 1)[0];
-
-  currentPlan = {gender, age, cal, breakfastItems, lunchItems, dinnerItems, snackPick, fruitPick};
-  saveToStorage(gender, age);
+  currentPlan={
+    gender,age,h,w,cal,
+    breakfastItems:pickRandom(filterByCat(breakfastPool,bCat),1),
+    lunchItems:pickRandom(filterByCat(lunchPool,lCat),1),
+    dinnerItems:pickRandom(filterByCat(dinnerPool,dCat),1),
+    snackPick:pickRandom(afternoonSnacks,1)[0],
+    fruitPick:pickRandom(fruitPool,1)[0]
+  };
+  saveToStorage(gender,age,h,w);
   render(currentPlan);
+}
+
+function calcCalories(gender,age,h,w){
+  let bmr;
+  if(gender==='male'){bmr=10*w+6.25*h-5*age+5}
+  else{bmr=10*w+6.25*h-5*age-161}
+  const tdee=Math.round(bmr*1.2);
+  const deficit=350;
+  const target=tdee-deficit;
+  return{
+    bmr:Math.round(bmr),tdee,
+    target,targetLow:target-100,targetHigh:target+100,
+    breakfast:Math.round(target*0.25),lunch:Math.round(target*0.35),
+    dinner:Math.round(target*0.30),snackBudget:Math.round(target*0.10)
+  };
 }
 
 function render(plan){
   document.getElementById('step2').style.display='block';
-
-  const cal = plan.cal;
-  document.getElementById('calRange').textContent = `${cal.targetLow} ~ ${cal.targetHigh}`;
-  document.getElementById('calTarget').textContent = `${cal.targetLow}-${cal.targetHigh}`;
-  document.getElementById('calBreakfast').textContent = `~${cal.breakfast} kcal`;
-  document.getElementById('calLunch').textContent = `~${cal.lunch} kcal`;
-  document.getElementById('calDinner').textContent = `~${cal.dinner} kcal`;
-  document.getElementById('calSnack').textContent = `~${cal.snackBudget} kcal`;
-
-  renderMeal('breakfast', plan.breakfastItems, plan);
-  renderMeal('lunch', plan.lunchItems, plan);
-  renderMeal('dinner', plan.dinnerItems, plan);
-  renderSnack(plan.snackPick, plan.fruitPick);
+  const cal=plan.cal;
+  document.getElementById('calRange').textContent=`${cal.targetLow} ~ ${cal.targetHigh}`;
+  document.getElementById('calTarget').textContent=`${cal.targetLow}-${cal.targetHigh}`;
+  document.getElementById('calBreakfast').textContent=`~${cal.breakfast} kcal`;
+  document.getElementById('calLunch').textContent=`~${cal.lunch} kcal`;
+  document.getElementById('calDinner').textContent=`~${cal.dinner} kcal`;
+  document.getElementById('calSnack').textContent=`~${cal.snackBudget} kcal`;
+  renderMeal('breakfast',plan.breakfastItems);
+  renderMeal('lunch',plan.lunchItems);
+  renderMeal('dinner',plan.dinnerItems);
+  renderSnack(plan.snackPick,plan.fruitPick);
   renderSummary(plan);
-
-  // Scroll to results
   document.getElementById('calorieCard').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
-function renderMeal(mealType, items, plan){
-  const container = document.getElementById(mealType+'Items');
-  let totalCal = items.reduce((s,i)=>s+i.cal, 0);
-  let html = '';
-  items.forEach(item=>{
-    html += `<div class="food-item">
-      <div class="food-info">
-        <div class="food-name">${item.name}</div>
-        <div class="food-source"><span>📍 来源</span> ${item.source}</div>
-        <div class="food-time">⏱ 耗时约 ${item.time||'10分钟'}</div>
-      </div>
-      <div class="food-cal">${item.cal}<br><span style="font-size:.7em;font-weight:400;color:var(--muted)">kcal</span></div>
+function renderMeal(mealType,items){
+  const c=document.getElementById(mealType+'Items');
+  let t=items.reduce((s,i)=>s+i.cal,0), h='';
+  items.forEach(i=>{
+    const mp=i.p?` · 蛋白质${i.p}g`:'', mc=i.c?` 碳水${i.c}g`:'', mf=i.f?` 脂肪${i.f}g`:'';
+    h+=`<div class="food-item"><div class="food-info">
+      <div class="food-name">${i.name}</div>
+      <div class="food-source"><span>📍 来源</span> ${i.source}</div>
+      <div class="food-time">⏱ ${i.time||'10分钟'}</div>
+      <div class="food-macros">🧬${mp}${mc}${mf}</div>
+    </div>
+    <div class="food-cal">${i.cal}<br><span style="font-size:.7em;font-weight:400;color:var(--muted)">kcal</span></div>
     </div>`;
   });
-  html += `<div class="meal-total">本餐合计 <strong style="color:var(--accent2);font-size:1.1em">${totalCal} kcal</strong></div>`;
-  container.innerHTML = html;
+  h+=`<div class="meal-total">本餐合计 <strong style="color:var(--accent2);font-size:1.1em">${t} kcal</strong></div>`;
+  c.innerHTML=h;
 }
 
-function renderSnack(snackPick, fruitPick){
-  const container = document.getElementById('snackItems');
-  container.innerHTML = `
-    <div class="snack-item">
-      <div class="snack-emoji">${snackPick.emoji}</div>
-      <div class="snack-name">${snackPick.name}</div>
-      <div class="snack-cal">${snackPick.cal} kcal</div>
-      <div style="font-size:.72em;color:var(--muted);margin-top:2px">${snackPick.source}</div>
-    </div>
-    <div class="snack-item">
-      <div class="snack-emoji">${fruitPick.emoji}</div>
-      <div class="snack-name">${fruitPick.name}</div>
-      <div class="snack-cal">${fruitPick.cal} kcal</div>
-      <div style="font-size:.72em;color:var(--muted);margin-top:2px">${fruitPick.note}</div>
-    </div>
-  `;
+function renderSnack(s,f){
+  document.getElementById('snackItems').innerHTML=`
+    <div class="snack-item"><div class="snack-emoji">${s.emoji}</div><div class="snack-name">${s.name}</div><div class="snack-cal">${s.cal} kcal</div><div class="snack-macros">🧬 蛋白${s.p||0}g · 碳水${s.c||0}g · 脂肪${s.f||0}g</div><div style="font-size:.72em;color:var(--muted)">${s.source}</div></div>
+    <div class="snack-item"><div class="snack-emoji">${f.emoji}</div><div class="snack-name">${f.name}</div><div class="snack-cal">${f.cal} kcal</div><div class="snack-macros">🍎 ${f.note||''}</div></div>`;
 }
 
 function refreshMeal(mealType){
-  if(!currentPlan) return;
-  let newItems, plan = currentPlan;
-
+  if(!currentPlan)return;
+  let pool,cat;
   switch(mealType){
-    case 'breakfast':
-      newItems = pickRandom(breakfastPool, 1);
-      plan.breakfastItems = newItems;
-      renderMeal('breakfast', newItems, plan);
-      break;
-    case 'lunch':
-      newItems = pickRandom(lunchPool, 1);
-      plan.lunchItems = newItems;
-      renderMeal('lunch', newItems, plan);
-      break;
-    case 'dinner':
-      newItems = pickRandom(dinnerPool, 1);
-      plan.dinnerItems = newItems;
-      renderMeal('dinner', newItems, plan);
-      break;
-    case 'snack':
-      plan.snackPick = pickRandom(afternoonSnacks, 1)[0];
-      plan.fruitPick = pickRandom(fruitPool, 1)[0];
-      renderSnack(plan.snackPick, plan.fruitPick);
-      break;
+    case'breakfast':cat=document.getElementById('breakfastCat').value;pool=filterByCat(breakfastPool,cat);currentPlan.breakfastItems=pickRandom(pool,1);renderMeal('breakfast',currentPlan.breakfastItems);break;
+    case'lunch':cat=document.getElementById('lunchCat').value;pool=filterByCat(lunchPool,cat);currentPlan.lunchItems=pickRandom(pool,1);renderMeal('lunch',currentPlan.lunchItems);break;
+    case'dinner':cat=document.getElementById('dinnerCat').value;pool=filterByCat(dinnerPool,cat);currentPlan.dinnerItems=pickRandom(pool,1);renderMeal('dinner',currentPlan.dinnerItems);break;
+    case'snack':currentPlan.snackPick=pickRandom(afternoonSnacks,1)[0];currentPlan.fruitPick=pickRandom(fruitPool,1)[0];renderSnack(currentPlan.snackPick,currentPlan.fruitPick);break;
   }
-  renderSummary(plan);
+  renderSummary(currentPlan);
 }
 
 function randomizeAll(){
-  if(!currentPlan) return;
-  currentPlan.breakfastItems = pickRandom(breakfastPool, 1);
-  currentPlan.lunchItems = pickRandom(lunchPool, 1);
-  currentPlan.dinnerItems = pickRandom(dinnerPool, 1);
-  currentPlan.snackPick = pickRandom(afternoonSnacks, 1)[0];
-  currentPlan.fruitPick = pickRandom(fruitPool, 1)[0];
+  if(!currentPlan)return;
+  currentPlan.breakfastItems=pickRandom(filterByCat(breakfastPool,document.getElementById('breakfastCat').value),1);
+  currentPlan.lunchItems=pickRandom(filterByCat(lunchPool,document.getElementById('lunchCat').value),1);
+  currentPlan.dinnerItems=pickRandom(filterByCat(dinnerPool,document.getElementById('dinnerCat').value),1);
+  currentPlan.snackPick=pickRandom(afternoonSnacks,1)[0];
+  currentPlan.fruitPick=pickRandom(fruitPool,1)[0];
   render(currentPlan);
-  document.getElementById('calorieCard').scrollIntoView({behavior:'smooth'});
 }
 
 function renderSummary(plan){
-  const cal = plan.cal;
-  // Calculate actual totals
-  const breakfastCal = plan.breakfastItems.reduce((s,i)=>s+i.cal,0);
-  const lunchCal = plan.lunchItems.reduce((s,i)=>s+i.cal,0);
-  const dinnerCal = plan.dinnerItems.reduce((s,i)=>s+i.cal,0);
-  const snackCal = plan.snackPick.cal + plan.fruitPick.cal;
-  const totalCal = breakfastCal + lunchCal + dinnerCal + snackCal;
+  const cal=plan.cal;
+  const bC=plan.breakfastItems.reduce((s,i)=>s+i.cal,0);
+  const lC=plan.lunchItems.reduce((s,i)=>s+i.cal,0);
+  const dC=plan.dinnerItems.reduce((s,i)=>s+i.cal,0);
+  const sC=plan.snackPick.cal+plan.fruitPick.cal;
+  const totalCal=bC+lC+dC+sC;
 
-  const diff = totalCal - cal.target;
-  const diffPercent = Math.round((totalCal/cal.target - 1)*100);
+  // Sum real macros from all food items
+  const allFoods=[...plan.breakfastItems,...plan.lunchItems,...plan.dinnerItems,plan.snackPick,plan.fruitPick];
+  const totalP=allFoods.reduce((s,i)=>s+(i.p||0),0);
+  const totalC=allFoods.reduce((s,i)=>s+(i.c||0),0);
+  const totalF=allFoods.reduce((s,i)=>s+(i.f||0),0);
+  const pKcal=totalP*4, cKcal=totalC*4, fKcal=totalF*9;
+  const macroTotal=pKcal+cKcal+fKcal||1;
+  const protPct=Math.round(pKcal/macroTotal*100);
+  const carbPct=Math.round(cKcal/macroTotal*100);
+  const fatPct=Math.round(fKcal/macroTotal*100);
 
-  // Estimate macros (rough)
-  const proteinEst = Math.round(totalCal * 0.22 / 4); // ~22% protein, 4kcal/g
-  const carbEst = Math.round(totalCal * 0.48 / 4);     // ~48% carbs
-  const fatEst = Math.round(totalCal * 0.30 / 9);       // ~30% fat
+  const diff=totalCal-cal.target;
+  const diffPercent=Math.round((totalCal/cal.target-1)*100);
 
-  // Build summary HTML
-  let assessment = '';
-  let tagClass = '';
-  if(Math.abs(diff) <= 100){
-    assessment = '非常棒！今天的热量搭配很合理，继续保持~ 🎉';
-    tagClass = 'tag-ok';
-  } else if(diff < -100){
-    assessment = `比目标少了 ${Math.abs(diff)} kcal，有点偏少了哦。如果觉得饿可以再加一小份蛋白质~ 💪`;
-    tagClass = 'tag-warn';
-  } else if(diff <= 200){
-    assessment = `比目标多了 ${diff} kcal，还好还好，在可接受范围内。明天稍微注意一下就好~ 😊`;
-    tagClass = 'tag-warn';
-  } else {
-    assessment = `比目标多了 ${diff} kcal，稍微超了点。考虑把下午茶的量减半试试？不用自责，明天再来~ 🌸`;
-    tagClass = 'tag-over';
-  }
+  let assessment='',tagClass='';
+  if(Math.abs(diff)<=100){assessment='非常棒！今天的热量搭配很合理，继续保持~ 🎉';tagClass='tag-ok'}
+  else if(diff<-100){assessment=`比目标少了 ${Math.abs(diff)} kcal，偏少。觉得饿可以加一小份蛋白质~ 💪`;tagClass='tag-warn'}
+  else if(diff<=200){assessment=`比目标多了 ${diff} kcal，在可接受范围内。明天稍微注意一下~ 😊`;tagClass='tag-warn'}
+  else{assessment=`比目标多了 ${diff} kcal，稍微超了。下午茶减半试试？不用自责~ 🌸`;tagClass='tag-over'}
 
-  // Check for common deficiencies
-  let notes = [];
-  // Check if there are vegetables in the meals
-  const allFoodNames = [
-    ...plan.breakfastItems.map(i=>i.name),
-    ...plan.lunchItems.map(i=>i.name),
-    ...plan.dinnerItems.map(i=>i.name)
-  ].join('');
-  const hasVeg = /菜|蔬|西兰|芦笋|番茄|黄瓜|木耳|海带|生菜|菠菜|菌菇|南瓜|冬瓜|豆芽|青椒|彩椒/.test(allFoodNames);
-  const hasFruit = true; // fruit is always included
-  const hasProtein = /鸡|鱼|虾|蛋|牛|猪|豆|豆腐|奶|三文|金枪/.test(allFoodNames);
-  const hasWholeGrain = /杂粮|全麦|糙米|燕麦|荞麦|玉米|紫薯|南瓜|小米|魔芋/.test(allFoodNames);
+  // Macro assessment
+  let macroNote='';
+  if(protPct>=18&&protPct<=28&&fatPct>=20&&fatPct<=35) macroNote='✅ 三大营养素比例在推荐范围内，很棒！';
+  else if(protPct<18) macroNote='⚠️ 蛋白质占比偏低，建议增加鸡胸肉、鱼虾、蛋奶类';
+  else if(fatPct>35) macroNote='⚠️ 脂肪占比偏高，注意减少油炸和高油烹饪';
+  else macroNote='⚡ 营养素比例基本合理，可以微调一下~';
 
-  if(!hasVeg) notes.push('🥬 <strong>蔬菜可能偏少</strong>——蔬菜热量极低但营养丰富，建议每餐至少有一种蔬菜');
-  if(!hasWholeGrain) notes.push('🌾 <strong>粗粮比例可以再高一点</strong>——把白米饭换成杂粮饭、荞麦面或蒸紫薯，更扛饿也更健康');
-  if(hasProtein) notes.push('💪 蛋白质摄入看起来不错，继续保持！');
-  if(hasVeg && hasFruit && hasProtein && hasWholeGrain){
-    notes.push('🌈 今天的营养搭配挺全面的！蔬菜、蛋白质、粗粮、水果都有了，给自己点个赞~');
-  }
+  // Food quality checks
+  const allNames=allFoods.map(i=>i.name).join('');
+  const hasVeg=/菜|蔬|西兰|芦笋|番茄|黄瓜|木耳|海带|生菜|菠菜|菌菇|南瓜|冬瓜|豆芽|青椒|彩椒|沙拉/.test(allNames);
+  const hasProtein=/鸡|鱼|虾|蛋|牛|猪|豆|豆腐|奶|三文|金枪/.test(allNames);
+  const hasGrain=/杂粮|全麦|糙米|燕麦|荞麦|玉米|紫薯|南瓜|小米|魔芋|红薯/.test(allNames);
 
-  const container = document.getElementById('summaryContent');
+  let notes=[];
+  if(hasVeg&&hasProtein&&hasGrain) notes.push('🌈 今天的搭配挺全面！蔬菜、蛋白质、粗粮都有，给自己点个赞~');
+  if(!hasVeg) notes.push('🥬 <strong>蔬菜可能偏少</strong>——热量极低但营养丰富，每餐最好都有蔬菜');
+  if(!hasGrain) notes.push('🌾 <strong>粗粮可以再多点</strong>——把白米饭换成杂粮饭或紫薯更扛饿');
 
-  // Build donut chart data
-  const chartData = [
-    {label:'早餐', cal:breakfastCal, color:'#f0a868'},
-    {label:'午餐', cal:lunchCal, color:'#e07060'},
-    {label:'晚餐', cal:dinnerCal, color:'#7eb8a0'},
-    {label:'加餐', cal:snackCal, color:'#6b8db5'},
-  ];
-  const totalForChart = chartData.reduce((s,d)=>s+d.cal,0);
-  let conicParts = [];
-  let cum = 0;
-  chartData.forEach(d=>{
-    const pct = (d.cal/totalForChart*100);
-    conicParts.push(`${d.color} ${cum}% ${cum+pct}%`);
-    cum += pct;
-  });
-  const conicGradient = conicParts.join(', ');
+  // Build charts
+  const chartData=[{label:'早餐',cal:bC,color:'#f0a868'},{label:'午餐',cal:lC,color:'#e07060'},{label:'晚餐',cal:dC,color:'#7eb8a0'},{label:'加餐',cal:sC,color:'#6b8db5'}];
+  let cparts=[],cum=0;
+  chartData.forEach(d=>{const p=d.cal/totalCal*100;cparts.push(`${d.color} ${cum}% ${cum+p}%`);cum+=p;});
 
-  // Macros donut chart
-  const proteinKcal = proteinEst * 4;
-  const carbKcal = carbEst * 4;
-  const fatKcal = fatEst * 9;
-  const macroTotal = proteinKcal + carbKcal + fatKcal;
-  const macroData = [
-    {label:'蛋白质', cal:proteinKcal, pct:Math.round(proteinKcal/macroTotal*100), color:'#e07060'},
-    {label:'碳水化合物', cal:carbKcal, pct:Math.round(carbKcal/macroTotal*100), color:'#f0a868'},
-    {label:'脂肪', cal:fatKcal, pct:Math.round(fatKcal/macroTotal*100), color:'#7eb8a0'},
-  ];
-  // Balance assessment
-  let macroNote = '';
-  const protPct = macroData[0].pct;
-  const fatPct = macroData[2].pct;
-  if(protPct >= 18 && protPct <= 28 && fatPct >= 20 && fatPct <= 35){
-    macroNote = '✅ 三大营养素比例合理，继续保持！';
-  } else if(protPct < 18){
-    macroNote = '⚠️ 蛋白质占比偏低，建议增加鸡胸肉、鱼虾、蛋奶类食物';
-  } else if(fatPct > 35){
-    macroNote = '⚠️ 脂肪占比偏高，注意减少油炸和高油烹饪的食物';
-  }
+  const macroData=[{label:'蛋白质',pct:protPct,color:'#e07060'},{label:'碳水',pct:carbPct,color:'#f0a868'},{label:'脂肪',pct:fatPct,color:'#7eb8a0'}];
+  let mparts=[],mcum=0;
+  macroData.forEach(d=>{mparts.push(`${d.color} ${mcum}% ${mcum+d.pct}%`);mcum+=d.pct;});
 
-  let macroConicParts = [];
-  let mcum = 0;
-  macroData.forEach(d=>{
-    macroConicParts.push(`${d.color} ${mcum}% ${mcum+d.pct}%`);
-    mcum += d.pct;
-  });
-
-  container.innerHTML = `
-    <h3 style="margin:0 0 12px 0">🍽️ 热量分配</h3>
+  document.getElementById('summaryContent').innerHTML=`
+    <h3 style="margin:0 0 12px">🍽️ 热量分配</h3>
     <div class="donut-wrap">
-      <div class="donut-chart" style="background:conic-gradient(${conicGradient})">
-        <div class="donut-center">
-          <div class="dnum">${totalCal}</div>
-          <div class="dlbl">kcal / 天</div>
-        </div>
-      </div>
-      <div class="donut-legend">
-        ${chartData.map(d=>`
-          <div class="leg-item">
-            <div class="leg-dot" style="background:${d.color}"></div>
-            <span>${d.label}</span>
-            <strong style="margin-left:auto">${d.cal} kcal</strong>
-            <span style="color:var(--muted);font-size:.8em">(${Math.round(d.cal/totalForChart*100)}%)</span>
-          </div>
-        `).join('')}
-      </div>
+      <div class="donut-chart" style="background:conic-gradient(${cparts.join(',')})"><div class="donut-center"><div class="dnum">${totalCal}</div><div class="dlbl">kcal/天</div></div></div>
+      <div class="donut-legend">${chartData.map(d=>`<div class="leg-item"><div class="leg-dot" style="background:${d.color}"></div><span>${d.label}</span><strong style="margin-left:auto">${d.cal} kcal</strong><span style="color:var(--muted);font-size:.8em">(${Math.round(d.cal/totalCal*100)}%)</span></div>`).join('')}</div>
     </div>
-    <h3 style="margin:16px 0 12px 0">🧬 能量来源构成</h3>
+    <h3 style="margin:16px 0 12px">🧬 能量来源构成 <span style="font-size:.7em;font-weight:400;color:var(--muted)">(基于食物实际估算)</span></h3>
     <div class="donut-wrap">
-      <div class="donut-chart" style="background:conic-gradient(${macroConicParts.join(', ')})">
-        <div class="donut-center">
-          <div class="dnum" style="font-size:1em">${protPct}:${macroData[1].pct}:${fatPct}</div>
-          <div class="dlbl">蛋:碳:脂</div>
-        </div>
-      </div>
+      <div class="donut-chart" style="background:conic-gradient(${mparts.join(',')})"><div class="donut-center"><div class="dnum" style="font-size:1em">${protPct}:${carbPct}:${fatPct}</div><div class="dlbl">蛋:碳:脂</div></div></div>
       <div class="donut-legend">
-        ${macroData.map(d=>`
-          <div class="leg-item">
-            <div class="leg-dot" style="background:${d.color}"></div>
-            <span>${d.label}</span>
-            <strong style="margin-left:auto">${d.pct}%</strong>
-          </div>
-        `).join('')}
+        ${macroData.map(d=>`<div class="leg-item"><div class="leg-dot" style="background:${d.color}"></div><span>${d.label}</span><strong style="margin-left:auto">${d.pct}%</strong></div>`).join('')}
         <div style="margin-top:8px;font-size:.82em;color:${macroNote.startsWith('✅')?'var(--accent2)':'var(--warm2)'}">${macroNote}</div>
       </div>
     </div>
@@ -678,56 +520,29 @@ function renderSummary(plan){
       <tr><th>项目</th><th>数值</th><th>说明</th></tr>
       <tr><td>今日总摄入</td><td><strong>${totalCal} kcal</strong></td><td>目标 ${cal.targetLow}-${cal.targetHigh} kcal</td></tr>
       <tr><td>偏差</td><td><span class="${tagClass}">${diff>0?'+':''}${diff} kcal (${diffPercent>0?'+':''}${diffPercent}%)</span></td><td>${assessment}</td></tr>
-      <tr><td>蛋白质</td><td>~${proteinEst} g (${protPct}%)</td><td>减脂期建议 ≥1.2g/kg · ${proteinEst>=50?'✅ 充足':proteinEst>=35?'⚠️ 可再多一点':'🔴 偏少'}</td></tr>
-      <tr><td>碳水</td><td>~${carbEst} g (${macroData[1].pct}%)</td><td>优选粗粮 · ${macroData[1].pct>=40&&macroData[1].pct<=55?'✅ 合理':macroData[1].pct>55?'⚠️ 偏高，可减精制碳水':'⚠️ 偏低，运动后需补充'}</td></tr>
-      <tr><td>脂肪</td><td>~${fatEst} g (${fatPct}%)</td><td>${fatPct<=30?'✅ 健康水平':fatPct<=35?'⚠️ 稍高，注意烹饪油量':'🔴 偏高，减少油炸'}</td></tr>
+      <tr><td>蛋白质</td><td>~${totalP}g (${protPct}%)</td><td>${totalP>=50?'✅ 充足':totalP>=35?'⚠️ 可再多一点':'🔴 偏少'}</td></tr>
+      <tr><td>碳水</td><td>~${totalC}g (${carbPct}%)</td><td>${carbPct>=40&&carbPct<=55?'✅ 合理':carbPct>55?'⚠️ 偏高，减精制碳水':'⚠️ 偏低'}</td></tr>
+      <tr><td>脂肪</td><td>~${totalF}g (${fatPct}%)</td><td>${fatPct<=30?'✅ 健康':fatPct<=35?'⚠️ 稍高':'🔴 偏高'}</td></tr>
     </table>
-    <div style="margin-top:12px">
-      ${notes.map(n=>`<p style="margin:6px 0;font-size:.9em">${n}</p>`).join('')}
-    </div>
-    <div style="margin-top:14px;padding:12px;background:#f7faf8;border-radius:10px;font-size:.88em;color:#5a7a68">
-      💡 <strong>今日小贴士：</strong>
-      ${getDailyTip()}
-    </div>
-  `;
+    <div style="margin-top:12px">${notes.map(n=>`<p style="margin:6px 0;font-size:.9em">${n}</p>`).join('')}</div>
+    <div style="margin-top:14px;padding:12px;background:#f7faf8;border-radius:10px;font-size:.88em;color:#5a7a68">💡 <strong>今日小贴士：</strong>${getDailyTip()}</div>`;
 }
 
 function getDailyTip(){
-  const tips = [
-    "饭前喝一杯水(约300ml)，能有效减少正餐摄入量，亲测有效~",
-    "细嚼慢咽！大脑需要约20分钟才能收到「饱了」的信号，吃太快容易过量。",
-    "下午觉得饿的时候先喝杯水，有时身体会把「渴」误判为「饿」。",
-    "久坐之后站起来走5分钟，能帮助身体更好地利用血糖。",
-    "晚餐尽量在睡前3小时吃完，给消化系统足够的休息时间。",
-    "把零食放在看不见的地方！人更容易吃掉摆在眼前的食物。",
-    "用薄荷茶/柠檬水代替含糖饮料，零热量照样好喝。",
-    "给每餐拍张照——看到自己吃得很健康，本身就是一种正向激励！",
-    "周末可以适当放宽——减脂是马拉松不是冲刺，可持续更重要。",
-    "睡眠不足会让人更容易感到饥饿和想吃高热量的东西，今晚早点睡吧~",
-  ];
-  return tips[Math.floor(Math.random()*tips.length)];
+  const t=["饭前喝一杯水(约300ml)，能有效减少正餐摄入量，亲测有效~","细嚼慢咽！大脑需要约20分钟才能收到「饱了」的信号。","下午觉得饿的时候先喝杯水，有时身体把「渴」误判为「饿」。","久坐之后站起来走5分钟，帮身体更好地利用血糖。","晚餐尽量在睡前3小时吃完，给消化系统休息时间。","把零食放在看不见的地方！人更容易吃掉眼前的食物。","用薄荷茶/柠檬水代替含糖饮料，零热量照样好喝。","给每餐拍张照——看到自己吃得很健康是正向激励！","周末可适当放宽——减脂是马拉松不是冲刺。","睡眠不足会让人更容易饿，今晚早点睡吧~"];
+  return t[Math.floor(Math.random()*t.length)];
 }
 
 // ========== STORAGE ==========
-function saveToStorage(gender, age){
-  try{localStorage.setItem('st_lightfood',JSON.stringify({gender,age}));}catch(e){}
-}
-function loadFromStorage(){
+function saveToStorage(g,a,h,w){try{localStorage.setItem('st_lf2',JSON.stringify({gender:g,age:a,height:h,weight:w}));}catch(e){}}
+(function init(){
   try{
-    const d=JSON.parse(localStorage.getItem('st_lightfood'));
-    if(d){document.getElementById('gender').value=d.gender;document.getElementById('age').value=d.age;}
+    const d=JSON.parse(localStorage.getItem('st_lf2'));
+    if(d){document.getElementById('gender').value=d.gender;document.getElementById('age').value=d.age;document.getElementById('height').value=d.height||165;document.getElementById('weight').value=d.weight||60;}
   }catch(e){}
-}
-
-// ========== INIT ==========
-loadFromStorage();
-// Auto-generate if stored
-const saved = (()=>{try{return JSON.parse(localStorage.getItem('st_lightfood'));}catch(e){return null;}})();
-if(saved && saved.gender && saved.age){
-  document.getElementById('gender').value = saved.gender;
-  document.getElementById('age').value = saved.age;
-  generatePlan();
-}
+  const s=JSON.parse(localStorage.getItem('st_lf2')||'{}');
+  if(s.gender&&s.age){document.getElementById('gender').value=s.gender;document.getElementById('age').value=s.age;generatePlan();}
+})();
 </script>
 </body>
 </html>
